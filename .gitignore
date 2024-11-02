@@ -6,14 +6,14 @@ catboost_info/
 !agg_results.ipynb
 **/**.npy
 **/**.gz
-**/**.sh
+# **/**.sh
 **/**.obj
 **/**.png
 **/**.tar
 **/**.code-workspace
 **/**.csv
-exp/**/**/results_catboost.json
-exp/**/**/results_mlp.json
+# exp/**/**/results_catboost.json
+# exp/**/**/results_mlp.json
 
 configs/
 data/
