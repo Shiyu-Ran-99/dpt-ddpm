@@ -7,13 +7,13 @@ import lib
 import os
 import shutil
 import zero
-from sample import sample
+from scripts.sample import sample
 from smote.sample_smote import sample_smote
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.metrics import pairwise_distances
 from pathlib import Path
 import tempfile
-from eval_seeds import eval_seeds
+from scripts.eval_seeds import eval_seeds
 import numpy as np
 import subprocess
 import warnings
