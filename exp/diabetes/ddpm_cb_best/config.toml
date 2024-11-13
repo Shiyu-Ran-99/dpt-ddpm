@@ -3,7 +3,7 @@ parent_dir = "exp/diabetes/ddpm_cb_best"
 real_data_path = "data/diabetes/"
 model_type = "mlp"
 num_numerical_features = 8
-device = "cuda:0"
+device = "cpu"
 
 [model_params]
 d_in = 8

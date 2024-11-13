@@ -2,7 +2,7 @@ from sklearn.metrics import classification_report, r2_score, f1_score
 import numpy as np
 import os
 from sklearn.utils import shuffle
-import zero
+import delu as zero
 from pathlib import Path
 import lib
 from tab_ddpm.modules import MLP

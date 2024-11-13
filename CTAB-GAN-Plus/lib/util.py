@@ -19,7 +19,8 @@ import numpy as np
 import tomli
 import tomli_w
 import torch
-import zero
+# import zero
+import delu as zero
 
 from . import env
 

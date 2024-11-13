@@ -1,7 +1,7 @@
 parent_dir = "exp/diabetes/ctabgan"
 real_data_path = "data/diabetes/"
 seed = 0
-device = "cuda:0"
+device = "cpu"
 
 [train_params]
 lr = 0.0026555610849989405
@@ -15,8 +15,8 @@ class_dim = [
     64,
 ]
 batch_size = 491
-random_dim = 128
-num_channels = 64
+#random_dim = 128
+#num_channels = 64
 
 [sample]
 seed = 0

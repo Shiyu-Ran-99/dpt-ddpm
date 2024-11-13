@@ -9,8 +9,10 @@ from eval_mlp import train_mlp
 from eval_simple import train_simple
 import pandas as pd
 import matplotlib.pyplot as plt
-import zero
+# import zero
+import delu as zero
 import lib
+# import libzero as lib
 import torch
 
 def load_config(path) :
@@ -35,10 +37,11 @@ def main():
 
     args = parser.parse_args()
     raw_config = lib.load_config(args.config)
-    if 'device' in raw_config:
-        device = torch.device(raw_config['device'])
-    else:
-        device = torch.device('cuda:1')
+    # if 'device' in raw_config:
+    #     device = torch.device(raw_config['device'])
+    # else:
+        # device = torch.device('cuda:1')
+    device = torch.device('cpu')
     
     timer = zero.Timer()
     timer.run()

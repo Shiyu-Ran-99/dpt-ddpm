@@ -2,7 +2,7 @@ import lib
 import os
 import numpy as np
 import argparse
-from CTGAN.ctgan import TVAESynthesizer
+from CTGAN.CTGAN.ctgan import TVAESynthesizer
 from pathlib import Path
 import torch
 import pickle

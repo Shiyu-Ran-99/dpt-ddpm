@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-import zero
+import delu as zero
 import os
 from tab_ddpm.gaussian_multinomial_diffsuion import GaussianMultinomialDiffusion
 from tab_ddpm.utils import FoundNANsError

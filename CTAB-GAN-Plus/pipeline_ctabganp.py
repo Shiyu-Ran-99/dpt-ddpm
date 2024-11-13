@@ -3,8 +3,8 @@ import shutil
 import os
 import argparse
 from train_sample_ctabganp import train_ctabgan, sample_ctabgan
-from scripts.eval_catboost import train_catboost
-import zero
+from eval_catboost import train_catboost
+import delu as zero
 import lib
 from model.ctabgan import CTABGAN
 

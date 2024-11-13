@@ -2,9 +2,12 @@ import tomli
 import shutil
 import os
 import argparse
+# import sys
+# sys.path.append('/Users/pigr/Desktop/uzh论文/pythonProject/tab-ddpm/scripts')
 from train_sample_tvae import train_tvae, sample_tvae
-from scripts.eval_catboost import train_catboost
-import zero
+# from scripts.eval_catboost import train_catboost
+from eval_catboost import train_catboost
+import delu as zero
 import lib
 
 def load_config(path) :
@@ -29,6 +32,7 @@ def main():
 
     args = parser.parse_args()
     raw_config = lib.load_config(args.config)
+    # print(raw_config)
     timer = zero.Timer()
     timer.run()
     save_file(os.path.join(raw_config['parent_dir'], 'config.toml'), args.config)

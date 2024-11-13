@@ -1,7 +1,7 @@
 import numpy as np
 import os
 from sklearn.utils import shuffle
-import zero
+import delu as zero
 from pathlib import Path
 import lib
 from lib import concat_features, read_pure_data, read_changed_val

@@ -4,7 +4,8 @@ from collections import namedtuple
 
 import numpy as np
 import pandas as pd
-from rdt.transformers import BayesGMMTransformer, OneHotEncodingTransformer
+# from rdt.transformers import BayesGMMTransformer, OneHotEncodingTransformer
+from rdt.transformers import ClusterBasedNormalizer,OneHotEncoder
 
 SpanInfo = namedtuple('SpanInfo', ['dim', 'activation_fn'])
 ColumnTransformInfo = namedtuple(
@@ -45,8 +46,8 @@ class DataTransformer(object):
                 A ``ColumnTransformInfo`` object.
         """
         column_name = data.columns[0]
-        gm = BayesGMMTransformer(max_clusters=min(len(data), 10))
-        gm.fit(data, [column_name])
+        gm = ClusterBasedNormalizer(max_clusters=min(len(data), 10))
+        gm.fit(data, column_name)
         num_components = sum(gm.valid_component_indicator)
 
         return ColumnTransformInfo(
@@ -66,8 +67,8 @@ class DataTransformer(object):
                 A ``ColumnTransformInfo`` object.
         """
         column_name = data.columns[0]
-        ohe = OneHotEncodingTransformer()
-        ohe.fit(data, [column_name])
+        ohe = OneHotEncoder()
+        ohe.fit(data, column_name)
         num_categories = len(ohe.dummies)
 
         return ColumnTransformInfo(
@@ -110,7 +111,7 @@ class DataTransformer(object):
         column_name = data.columns[0]
         data.loc[:, column_name] = data[column_name].to_numpy().flatten()
         gm = column_transform_info.transform
-        transformed = gm.transform(data, [column_name])
+        transformed = gm.transform(data)
 
         #  Converts the transformed data to the appropriate output format.
         #  The first column (ending in '.normalized') stays the same,
@@ -145,17 +146,17 @@ class DataTransformer(object):
 
     def _inverse_transform_continuous(self, column_transform_info, column_data, sigmas, st):
         gm = column_transform_info.transform
-        data = pd.DataFrame(column_data[:, :2], columns=list(gm.get_output_types()))
+        data = pd.DataFrame(column_data[:, :2], columns=list(gm.get_output_sdtypes()))
         data.iloc[:, 1] = np.argmax(column_data[:, 1:], axis=1)
         if sigmas is not None:
             selected_normalized_value = np.random.normal(data.iloc[:, 0], sigmas[st])
             data.iloc[:, 0] = selected_normalized_value
 
-        return gm.reverse_transform(data, [column_transform_info.column_name])
+        return gm.reverse_transform(data)
 
     def _inverse_transform_discrete(self, column_transform_info, column_data):
         ohe = column_transform_info.transform
-        data = pd.DataFrame(column_data, columns=list(ohe.get_output_types()))
+        data = pd.DataFrame(column_data, columns=list(ohe.get_output_sdtypes()))
         return ohe.reverse_transform(data)[column_transform_info.column_name]
 
     def inverse_transform(self, data, sigmas=None):

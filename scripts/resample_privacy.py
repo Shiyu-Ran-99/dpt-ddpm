@@ -6,9 +6,9 @@ import argparse
 import lib
 import os
 import shutil
-import zero
+import delu as zero
 from sample import sample
-from smote.sample_smote import sample_smote
+# from smote.sample_smote import sample_smote
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.metrics import pairwise_distances
 from pathlib import Path
@@ -77,7 +77,8 @@ def privacy_metrics(real_path,fake_path, data_percent=15):
 
     # X_real = np.unique(X_real, axis=0)
     # X_fake = np.unique(X_fake, axis=0)
-
+    X_fake = np.asarray(X_fake)
+    X_real = np.asarray(X_real)
     # Computing pair-wise distances between real and synthetic 
     dist_rf = pairwise_distances(X_fake, Y=X_real, metric='l2', n_jobs=-1)
     # Computing pair-wise distances within real 
