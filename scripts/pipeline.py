@@ -14,6 +14,9 @@ import delu as zero
 import lib
 # import libzero as lib
 import torch
+import warnings
+
+warnings.filterwarnings('ignore')
 
 def load_config(path) :
     with open(path, 'rb') as f:

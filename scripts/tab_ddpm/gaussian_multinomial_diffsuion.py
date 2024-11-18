@@ -588,13 +588,16 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
             return -loss
     
-    def mixed_loss(self, x, out_dict):
+    # def mixed_loss(self, x, out_dict):
+    def forward(self, x, out_dict):
         b = x.shape[0]
         device = x.device
         t, pt = self.sample_time(b, device, 'uniform')
 
         x_num = x[:, :self.num_numerical_features]
         x_cat = x[:, self.num_numerical_features:]
+        # print(f"x_num is {x_num}")
+        # print(f"x_cat is {x_cat}")
         
         x_num_t = x_num
         log_x_cat_t = x_cat
@@ -603,6 +606,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             x_num_t = self.gaussian_q_sample(x_num, t, noise=noise)
         if x_cat.shape[1] > 0:
             log_x_cat = index_to_log_onehot(x_cat.long(), self.num_classes)
+            # log_x_cat = index_to_log_onehot(torch.where(x_cat>0, 1, 0), self.num_classes)
             log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t)
         
         x_in = torch.cat([x_num_t, log_x_cat_t], dim=1)

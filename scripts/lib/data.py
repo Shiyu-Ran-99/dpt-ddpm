@@ -526,7 +526,7 @@ def prepare_torch_dataloader(
 ) -> torch.utils.data.DataLoader:
 
     torch_dataset = TabDataset(dataset, split)
-    loader = torch.utils.data.DataLoader(torch_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=1)
+    loader = torch.utils.data.DataLoader(torch_dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0)
 
     return loader
 
@@ -612,12 +612,18 @@ def prepare_fast_torch_dataloader(
     split : str,
     batch_size: int
 ):
+    # M = deepcopy(D)
     if D.X_cat is not None:
         X = torch.from_numpy(np.concatenate([D.X_num[split], D.X_cat[split]], axis=1)).float()
     else:
         X = torch.from_numpy(D.X_num[split]).float()
     y = torch.from_numpy(D.y[split])
-    dataloader = FastTensorDataLoader(X, y, batch_size=batch_size, shuffle=(split=='train'))
+    M = IterDataset(X, y)
+    # d = TabDataset(M, split='train')
+    # dataloader = FastTensorDataLoader(X, y, batch_size=batch_size, shuffle=(split=='train'))
+    # print(f"M is {M.__getitem__(0)}")
+    # dataloader = TensorDataLoader(M, batch_size=batch_size, shuffle=False)
+    dataloader = torch.utils.data.DataLoader(M, batch_size=batch_size, shuffle=False)
     return dataloader
 
 def round_columns(X_real, X_synth, columns):
@@ -716,3 +722,65 @@ def load_dataset_info(dataset_dir_name: str) -> Dict[str, Any]:
     info['n_features'] = info['n_num_features'] + info['n_cat_features']
     info['path'] = path
     return info
+
+class IterDataset(torch.utils.data.Dataset):
+  def __init__(self, *data):
+    # prepare the data as required
+    super(IterDataset, self).__init__()
+    self.data = data
+
+  def __getitem__(self, index):
+    # return input and target value for the given index
+    return self.data
+
+  def __len__(self):
+    # return the length of this dataset
+    return len(self.data)
+
+# class TensorDataLoader(torch.utils.data.DataLoader):
+#     """
+#     A DataLoader-like object for a set of tensors that can be much faster than
+#     TensorDataset + DataLoader because dataloader grabs individual indices of
+#     the dataset and calls cat (slow).
+#     Source: https://discuss.pytorch.org/t/dataloader-much-slower-than-manual-batching/27014/6
+#     """
+#     def __init__(self, dataset, batch_size=32, shuffle=False):
+#         """
+#         Initialize a FastTensorDataLoader.
+#         :param *tensors: tensors to store. Must have the same length @ dim 0.
+#         :param batch_size: batch size to load.
+#         :param shuffle: if True, shuffle the data *in-place* whenever an
+#             iterator is created out of this object.
+#         :returns: A FastTensorDataLoader.
+#         """
+#         super(TensorDataLoader, self).__init__(dataset)
+#         # assert all(t.shape[0] == dataset[0].shape[0] for t in dataset)
+#         # assert all(len(t[0]) == len(dataset[0]) for t in dataset)
+#         # self.tensors = tensors
+#
+#         # self.dataset_len = self.dataset[0].shape[0]
+#         self.dataset_len = len(self.dataset[0])
+#         # self.batch_size = batch_size
+#         self.shuffle = shuffle
+#
+#         # Calculate # batches
+#         n_batches, remainder = divmod(self.dataset_len, self.batch_size)
+#         if remainder > 0:
+#             n_batches += 1
+#         self.n_batches = n_batches
+#     def __iter__(self):
+#         if self.shuffle:
+#             r = torch.randperm(self.dataset_len)
+#             self.tensors = [t[r] for t in self.dataset]
+#         self.i = 0
+#         return self
+#
+#     def __next__(self):
+#         if self.i >= self.dataset_len:
+#             raise StopIteration
+#         batch = tuple(t[self.i:self.i+self.batch_size] for t in self.dataset)
+#         self.i += self.batch_size
+#         return batch
+#
+#     def __len__(self):
+#         return self.n_batches
