@@ -3,7 +3,7 @@ real_data_path = "data/adult/"
 num_numerical_features = 6
 model_type = "mlp"
 seed = 0
-device = "cuda:0"
+device = "cpu"
 
 [model_params]
 num_classes = 2

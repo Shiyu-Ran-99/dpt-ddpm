@@ -3,7 +3,7 @@ parent_dir = "exp/abalone/ddpm_cb_best"
 real_data_path = "data/abalone/"
 model_type = "mlp"
 num_numerical_features = 7
-device = "cuda:0"
+device = "cpu"
 
 [model_params]
 is_y_cond = false
