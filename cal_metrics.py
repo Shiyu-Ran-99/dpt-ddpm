@@ -54,20 +54,20 @@ p = privacy_metric_manager.PrivacyMetricManager()
 metric_list = \
     [
         dcr_class.DCRCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#         nndr_class.NNDRCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#         adversarial_accuracy_class.AdversarialAccuracyCalculator(original_data, synthetic_data, original_name=original_name,
-#                                       synthetic_name=synthetic_name),
-#         # keys = [’Age’, ’BMI’, ’DiabetesPedigreeFunction’, ’Glucose’, ’BloodPressure’], target = 'Outcome'
-#         disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
-#                                       synthetic_name=synthetic_name, target='8', keys=['1','2','5','6','7']),
-# # disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
-# #                                       synthetic_name=synthetic_name, target='Outcome', keys=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']),
-#         inference_class.InferenceCalculator(original_data, synthetic_data, original_name=original_name,
-#                                               synthetic_name=synthetic_name, aux_cols=['0', '2', '3', '4', '5', '6', '7', '8'], secret='1', n_attacks=100),
-#         linkability_class.LinkabilityCalculator(original_data, synthetic_data, original_name=original_name,
-#                                       synthetic_name=synthetic_name, aux_cols=(['6', '7'], ['5', '1', '2', '0']), n_attacks=200, control=control_orig),
-#         singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
-#                                       synthetic_name=synthetic_name)
+        nndr_class.NNDRCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+        adversarial_accuracy_class.AdversarialAccuracyCalculator(original_data, synthetic_data, original_name=original_name,
+                                      synthetic_name=synthetic_name),
+        # keys = [’Age’, ’BMI’, ’DiabetesPedigreeFunction’, ’Glucose’, ’BloodPressure’], target = 'Outcome'
+        disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
+                                      synthetic_name=synthetic_name, target='8', keys=['1','2','5','6','7']),
+# disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
+#                                       synthetic_name=synthetic_name, target='Outcome', keys=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']),
+        inference_class.InferenceCalculator(original_data, synthetic_data, original_name=original_name,
+                                              synthetic_name=synthetic_name, aux_cols=['0', '2', '3', '4', '5', '6', '7', '8'], secret='1', n_attacks=100),
+        linkability_class.LinkabilityCalculator(original_data, synthetic_data, original_name=original_name,
+                                      synthetic_name=synthetic_name, aux_cols=(['6', '7'], ['5', '1', '2', '0']), n_attacks=200, control=control_orig),
+        singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
+                                      synthetic_name=synthetic_name)
     ]
 p.add_metric(metric_list)
 results = p.evaluate_all()
@@ -76,22 +76,22 @@ for key, value in results.items():
 
 '''--------------------------------------------------------------------------------------------------------'''
 # Initialize UtilityMetricManager
-# u = utility_metric_manager.UtilityMetricManager()
-#
-# # Define metrics to evaluate
-# metric_list = [
-#     basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#     mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#     correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#     js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#     ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-#     wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
-# ]
-#
-# # Add metrics to manager and evaluate
-# u.add_metric(metric_list)
-# results = u.evaluate_all()
-#
-# # Print results
-# for key, value in results.items():
-#     print(f"{key}: {value}")
+u = utility_metric_manager.UtilityMetricManager()
+
+# Define metrics to evaluate
+metric_list = [
+    basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
+]
+
+# Add metrics to manager and evaluate
+u.add_metric(metric_list)
+results = u.evaluate_all()
+
+# Print results
+for key, value in results.items():
+    print(f"{key}: {value}")
