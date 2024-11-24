@@ -930,6 +930,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
     @torch.no_grad()
     def sample(self, num_samples, y_dist):
         b = num_samples
+        # print(f"in sample function, b is {b}")
         device = self.log_alpha.device
         z_norm = torch.randn((b, self.num_numerical_features), device=device)
 
@@ -938,6 +939,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         if has_cat:
             uniform_logits = torch.zeros((b, len(self.num_classes_expanded)), device=device)
             log_z = self.log_sample_categorical(uniform_logits)
+            # print(log_z)
 
         y = torch.multinomial(
             y_dist,
@@ -955,16 +957,24 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             )
             model_out_num = model_out[:, :self.num_numerical_features]
             model_out_cat = model_out[:, self.num_numerical_features:]
+            # print(f"model_out_num is {model_out_num}")
+            # print(f"model_out_cat is {model_out_cat}")
             z_norm = self.gaussian_p_sample(model_out_num, z_norm, t, clip_denoised=False)['sample']
+            # print(f"z_norm is {z_norm}")
             if has_cat:
                 log_z = self.p_sample(model_out_cat, log_z, t, out_dict)
 
         print()
+        # print(f"nan in z_norm is {torch.any(z_norm.isnan(), dim=1)}")
         z_ohe = torch.exp(log_z).round()
         z_cat = log_z
         if has_cat:
             z_cat = ohe_to_categories(z_ohe, self.num_classes)
+        # print(f"nan in z_cat is {torch.any(z_cat.isnan(), dim=1)}")
         sample = torch.cat([z_norm, z_cat], dim=1).cpu()
+        # print(f"returned sample is {sample}")
+        # out_dict['y'] = torch.nan_to_num(out_dict['y'],nan=0)
+        # return torch.nan_to_num(sample), out_dict
         return sample, out_dict
     
     def sample_all(self, num_samples, batch_size, y_dist, ddim=False):
@@ -981,12 +991,19 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         num_generated = 0
         while num_generated < num_samples:
             sample, out_dict = sample_fn(b, y_dist)
+            # print(f"sample is {sample}")
             mask_nan = torch.any(sample.isnan(), dim=1)
+            # print(f"mask_nan is {mask_nan}")
             sample = sample[~mask_nan]
+            # sample = torch.nan_to_num(sample)
+            # print(f"sample without nan is {sample}")
             out_dict['y'] = out_dict['y'][~mask_nan]
+            # out_dict['y'] = torch.nan_to_num(out_dict['y'])
 
             all_samples.append(sample)
             all_y.append(out_dict['y'].cpu())
+            # print(f"sample.shape[0] is {sample.shape[0]}")
+            # print(f"b is {b}")
             if sample.shape[0] != b:
                 raise FoundNANsError
             num_generated += sample.shape[0]
