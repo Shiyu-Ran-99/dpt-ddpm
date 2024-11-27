@@ -1,0 +1,15 @@
+{"DCRCalculator('Diabetes', 'TVAE')": 0.26048204003178327,
+"NNDRCalculator('Diabetes', 'TVAE')": 0.8927221477855227,
+"AdversarialAccuracyCalculator('Diabetes', 'TVAE')": 0.9001041666666667,
+"AdversarialAccuracyCalculator_NN('Diabetes', 'TVAE')": 0.9001041666666667,
+"DisclosureCalculator('Diabetes', 'TVAE')": (0.0, 0.0),
+"InferenceCalculator('Diabetes', 'TVAE')": PrivacyRisk(value=0.0, ci=(0.0, 0.06735344259232517)),
+"LinkabilityCalculator('Diabetes', 'TVAE')": PrivacyRisk(value=0.0, ci=(0.0, 0.017421170309003416)),
+"SinglingOutCalculator('Diabetes', 'TVAE')": PrivacyRisk(value=0.09908023354646711, ci=(0.07317350466541903, 0.1249869624275152)),
+"BasicStatsCalculator('Diabetes', 'TVAE')": {'mean': 0.09151043041670413, 'median': 0.04729994939358963, 'var': 0.03545925691473742},
+"MICalculator('Diabetes', 'TVAE')": 0.800558316517522,
+"CorrelationCalculator('Diabetes', 'TVAE')": 0.9164666986388101,
+"JSCalculator('Diabetes', 'TVAE')": 0.6819389752044449,
+"KSCalculator('Diabetes', 'TVAE')": 0.7065219907407407,
+"WassersteinCalculator('Diabetes', 'TVAE')": 0.5798399072264793}
+{"CorrelationCalculator('Diabetes', 'TVAE'), method = 'spearman'": 0.9085447945272979}

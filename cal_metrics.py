@@ -37,6 +37,7 @@ original_data = pd.concat([pd.DataFrame(o), pd.DataFrame(o_y)], ignore_index=Tru
 synthetic_data = pd.concat([pd.DataFrame(s), pd.DataFrame(s_y)], ignore_index=True, axis=1)
 control_orig = pd.concat([pd.DataFrame(o_x_test), pd.DataFrame(o_y_test)], ignore_index=True, axis=1)
 control_orig.columns = control_orig.columns.map(lambda x:str(x))
+control_orig.columns = ['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age','Outcome']
 # print(control_orig)
 original_data.columns = original_data.columns.map(lambda x:str(x))
 original_data.columns = ['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age','Outcome']
@@ -64,13 +65,13 @@ metric_p_list = \
                                       synthetic_name=synthetic_name),
         # keys = [’Age’, ’BMI’, ’DiabetesPedigreeFunction’, ’Glucose’, ’BloodPressure’], target = 'Outcome'
         disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
-                                      synthetic_name=synthetic_name, target='8', keys=['1','2','5','6','7']),
+                                      synthetic_name=synthetic_name, target='Outcome', keys=['Glucose','BloodPressure','BMI','DiabetesPedigreeFunction','Age']),
 # disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
 #                                       synthetic_name=synthetic_name, target='Outcome', keys=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']),
         inference_class.InferenceCalculator(original_data, synthetic_data, original_name=original_name,
-                                              synthetic_name=synthetic_name, aux_cols=['0', '2', '3', '4', '5', '6', '7', '8'], secret='1', n_attacks=100, control=control_orig),
+                                              synthetic_name=synthetic_name, aux_cols=['Pregnancies', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome'], secret='Glucose', n_attacks=100, control=control_orig),
         linkability_class.LinkabilityCalculator(original_data, synthetic_data, original_name=original_name,
-                                      synthetic_name=synthetic_name, aux_cols=(['6', '7'], ['5', '1', '2', '0']), n_attacks=200, control=control_orig),
+                                      synthetic_name=synthetic_name, aux_cols=(['DiabetesPedigreeFunction', 'Age'], ['BMI', 'Glucose', 'BloodPressure', 'Pregnancies']), n_attacks=200, control=control_orig),
         singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
                                       synthetic_name=synthetic_name)
     ]
@@ -121,7 +122,7 @@ for key, value in results.items():
 
 # print(results.items())
 # key, value = results.items()
-file = open("metrics.txt", "a")
+file = open("metrics_1.txt", "a")
 file.write(f"{dict}")
 file.write("\n")
 file.close()

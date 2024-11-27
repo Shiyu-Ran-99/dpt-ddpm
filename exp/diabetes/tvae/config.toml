@@ -5,27 +5,35 @@ seed = 0
 device = 'cpu'
 
 [train_params]
-lr = 5.723631879975606e-05
-epochs = 20000
-embedding_dim = 512
-batch_size = 256
-loss_factor = 6.323198409475003
-compress_dims = [
-    64,
-    512,
-    512,
-    512,
-]
-decompress_dims = [
-    64,
-    512,
-    512,
-    512,
-]
+#lr = 5.723631879975606e-05
+lr = 1e-05
+#epochs = 20000
+epochs = 300
+#embedding_dim = 512
+embedding_dim = 128
+#batch_size = 256
+batch_size = 500
+#loss_factor = 6.323198409475003
+loss_factor = 2.0
+#compress_dims = [
+#    64,
+#    512,
+#    512,
+#    512,
+#]
+compress_dims = [128, 128]
+#decompress_dims = [
+#    64,
+#    512,
+#    512,
+#    512,
+#]
+decompress_dims = [128, 128]
 
 [sample]
 seed = 0
-num_samples = 1473
+#num_samples = 1473
+num_samples = 800
 
 [eval.type]
 eval_model = "catboost"
