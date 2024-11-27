@@ -85,6 +85,7 @@ u = utility_metric_manager.UtilityMetricManager()
 metric_u_list = [
     basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    # default method = 'pearson'
     correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
@@ -106,6 +107,13 @@ for key, value in results.items():
     dict[key] = value
     # Print results
     print(f"{key}: {value}")
+
+# # compute SPEARMAN
+# corr_s = correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
+# result = corr_s.evaluate(method=correlation.CorrelationMethod.SPEARMAN)
+# dict = {}
+# dict["CorrelationCalculator('Diabetes', 'TVAE'), method = 'spearman'"] = result
+# print(dict)
 
 # with open("metrics.json","w") as f:
 #     json.dump(dict,f)

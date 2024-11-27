@@ -12,4 +12,4 @@
 {"JSCalculator('Diabetes', 'TVAE')": 0.7746630935649088}
 {"KSCalculator('Diabetes', 'TVAE')": 0.8112939814814815}
 {"WassersteinCalculator('Diabetes', 'TVAE')": 0.24411832427108862}
-
+{"CorrelationCalculator('Diabetes', 'TVAE'), method = 'spearman'": 0.9536669392901406}
