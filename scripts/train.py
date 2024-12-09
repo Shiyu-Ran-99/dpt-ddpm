@@ -181,7 +181,7 @@ def train(
 
     num_numerical_features = dataset.X_num['train'].shape[1] if dataset.X_num is not None else 0
     print(f"num_numerical_features is {num_numerical_features}")
-    print(f"x_cat size is {dataset.X_cat['train'].shape}")
+    # print(f"x_cat size is {dataset.X_cat['train'].shape}")
     d_in = np.sum(K) + num_numerical_features
     if len(model_params['embedding_type']) != 0:
         d_embedding_in = np.sum(K) + num_numerical_features*model_params['d_embedding']
