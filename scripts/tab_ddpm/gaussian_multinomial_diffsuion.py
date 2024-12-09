@@ -6,7 +6,18 @@ and https://github.com/ehoogeboom/multinomial_diffusion
 import torch.nn.functional as F
 import torch
 import math
-
+from torch import Tensor
+from typing import Optional
+from rtdl_num_embeddings import (
+    LinearEmbeddings,
+    LinearReLUEmbeddings,
+    PeriodicEmbeddings,
+    PiecewiseLinearEncoding,
+    PiecewiseLinearEmbeddings,
+    compute_bins,
+)
+import warnings
+warnings.simplefilter('ignore')
 import numpy as np
 from .utils import *
 
@@ -71,7 +82,9 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             multinomial_loss_type='vb_stochastic',
             parametrization='x0',
             scheduler='cosine',
-            device=torch.device('cpu')
+            device=torch.device('cpu'),
+            embedding_type=None,
+            d_embedding=24
         ):
 
         super(GaussianMultinomialDiffusion, self).__init__()
@@ -101,6 +114,8 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         self.num_timesteps = num_timesteps
         self.parametrization = parametrization
         self.scheduler = scheduler
+        self.embedding_type = embedding_type
+        self.d_embedding = d_embedding
 
         alphas = 1. - get_named_beta_schedule(scheduler, num_timesteps)
         alphas = torch.tensor(alphas.astype('float64'))
@@ -593,14 +608,16 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         b = x.shape[0]
         device = x.device
         t, pt = self.sample_time(b, device, 'uniform')
+        # print(f"t is {t}, and t's shape is {t.shape}")
 
         x_num = x[:, :self.num_numerical_features]
         x_cat = x[:, self.num_numerical_features:]
         # print(f"x_num is {x_num}")
         # print(f"x_cat is {x_cat}")
-        
+
         x_num_t = x_num
         log_x_cat_t = x_cat
+
         if x_num.shape[1] > 0:
             noise = torch.randn_like(x_num)
             x_num_t = self.gaussian_q_sample(x_num, t, noise=noise)
@@ -608,17 +625,22 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             log_x_cat = index_to_log_onehot(x_cat.long(), self.num_classes)
             # log_x_cat = index_to_log_onehot(torch.where(x_cat>0, 1, 0), self.num_classes)
             log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t)
-        
+
         x_in = torch.cat([x_num_t, log_x_cat_t], dim=1)
 
         model_out = self._denoise_fn(
             x_in,
             t,
+            self.num_numerical_features,
+            self.d_embedding,
             **out_dict
         )
+        # print(f"model_out shape is {model_out.shape}")
 
         model_out_num = model_out[:, :self.num_numerical_features]
         model_out_cat = model_out[:, self.num_numerical_features:]
+        # model_out_num = model_out[:, :d_num]
+        # model_out_cat = model_out[:, d_num:]
 
         loss_multi = torch.zeros((1,)).float()
         loss_gauss = torch.zeros((1,)).float()
@@ -953,6 +975,8 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             model_out = self._denoise_fn(
                 torch.cat([z_norm, log_z], dim=1).float(),
                 t,
+                self.num_numerical_features,
+                self.d_embedding,
                 **out_dict
             )
             model_out_num = model_out[:, :self.num_numerical_features]
@@ -1012,3 +1036,4 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         y_gen = torch.cat(all_y, dim=0)[:num_samples]
 
         return x_gen, y_gen
+

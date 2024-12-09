@@ -5,11 +5,22 @@ Code was adapted from https://github.com/Yura52/rtdl
 import math
 from typing import Any, Callable, Dict, List, Optional, Tuple, Type, Union, cast
 
+import pandas as pd
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim
 from torch import Tensor
+from typing import Optional
+import numpy as np
+from rtdl_num_embeddings import (
+    LinearEmbeddings,
+    LinearReLUEmbeddings,
+    PeriodicEmbeddings,
+    PiecewiseLinearEncoding,
+    PiecewiseLinearEmbeddings,
+    compute_bins,
+)
 
 ModuleType = Union[str, Callable[..., nn.Module]]
 
@@ -423,16 +434,19 @@ class ResNet(nn.Module):
 #### For diffusion 
 
 class MLPDiffusion(nn.Module):
-    def __init__(self, d_in, num_classes, is_y_cond, rtdl_params, dim_t = 128):
+    def __init__(self, d_out, embedding_type, d_embedding, d_in, num_classes, is_y_cond, rtdl_params, dim_t = 128):
         super().__init__()
         self.dim_t = dim_t
         self.num_classes = num_classes
         self.is_y_cond = is_y_cond
+        self.embedding_type = embedding_type
+        self.d_in = d_in
+        self.d_embedding = d_embedding
 
         # d0 = rtdl_params['d_layers'][0]
 
         rtdl_params['d_in'] = dim_t
-        rtdl_params['d_out'] = d_in
+        rtdl_params['d_out'] = d_out
 
         self.mlp = MLP.make_baseline(**rtdl_params)
 
@@ -448,7 +462,7 @@ class MLPDiffusion(nn.Module):
             nn.Linear(dim_t, dim_t)
         )
     
-    def forward(self, x, timesteps, y=None):
+    def forward(self, x, timesteps, num_numerical_features, d_embedding, y=None):
         emb = self.time_embed(timestep_embedding(timesteps, self.dim_t))
         if self.is_y_cond and y is not None:
             if self.num_classes > 0:
@@ -456,18 +470,31 @@ class MLPDiffusion(nn.Module):
             else:
                 y = y.resize(y.size(0), 1).float()
             emb += F.silu(self.label_emb(y))
+
+        if len(self.embedding_type) != 0:
+            # embedding
+            e = Embedding(self.embedding_type, num_numerical_features, d_embedding, self.d_in)
+            x = e.embedd(x)
         x = self.proj(x) + emb
         return self.mlp(x)
+        # x = self.mlp(x)
+        # # x = torch.nn.Linear(x.shape[1], self.d_in)(x)
+        # return x
 
 class ResNetDiffusion(nn.Module):
-    def __init__(self, d_in, num_classes, rtdl_params, dim_t = 256):
+    def __init__(self, d_out, embedding_type, d_embedding, d_in, num_classes, is_y_cond, rtdl_params, dim_t = 256):
         super().__init__()
         self.dim_t = dim_t
         self.num_classes = num_classes
+        self.is_y_cond = is_y_cond
+        self.embedding_type = embedding_type
+        self.d_in = d_in
+        self.d_embedding = d_embedding
 
         rtdl_params['d_in'] = d_in
-        rtdl_params['d_out'] = d_in
-        rtdl_params['emb_d'] = dim_t
+        rtdl_params['d_out'] = d_out
+        # rtdl_params['emb_d'] = dim_t
+        rtdl_params['d_hidden'] = dim_t
         self.resnet = ResNet.make_baseline(**rtdl_params)
 
         if self.num_classes > 0:
@@ -479,8 +506,61 @@ class ResNetDiffusion(nn.Module):
             nn.Linear(dim_t, dim_t)
         )
     
-    def forward(self, x, timesteps, y=None):
+    def forward(self, x, timesteps, num_numerical_features, d_embedding, y=None):
         emb = self.time_embed(timestep_embedding(timesteps, self.dim_t))
         if y is not None and self.num_classes > 0:
             emb += self.label_emb(y.squeeze())
+        if len(self.embedding_type) != 0:
+            # embedding
+            e = Embedding(self.embedding_type, num_numerical_features, d_embedding, self.d_in)
+            x = e.embedd(x)
         return self.resnet(x, emb)
+
+class Embedding:
+    def __init__(self, embedding_type, num_numerical_features, d_embedding, d_in):
+        self.embedding_type = embedding_type
+        self.num_numerical_features = num_numerical_features
+        self.d_embedding = d_embedding
+        self.d_in = d_in
+        self.d_cat = None
+        if self.d_in != self.num_numerical_features*self.d_embedding:
+            self.d_cat = self.d_in - self.num_numerical_features*self.d_embedding
+
+    def embedd(self, x_in):
+        cont_embeddings = None
+        x = []
+        x_cat = []
+        if self.d_cat is not None:
+            x_num = x_in[:, :self.num_numerical_features]
+            x_cat = x_in[:, self.num_numerical_features:]
+        else:
+            x_num = x_in
+        if len(self.embedding_type) != 0:
+            if self.embedding_type == 'LinearEmbeddings':
+                cont_embeddings = LinearEmbeddings(n_features=self.num_numerical_features, d_embedding=self.d_embedding)
+            elif self.embedding_type == 'LinearReLUEmbeddings':
+                cont_embeddings = LinearReLUEmbeddings(self.num_numerical_features, self.d_embedding)
+            elif self.embedding_type == 'PeriodicEmbeddings':
+                cont_embeddings = PeriodicEmbeddings(self.d_embedding, lite=False)
+            elif self.embedding_type == 'PiecewiseLinearEncoding':
+                bins = compute_bins(torch.tensor(x_num), n_bins=len(x_num)-1)
+                cont_embeddings = PiecewiseLinearEncoding(bins)
+            elif self.embedding_type == 'PiecewiseLinearEmbeddings':
+                bins = compute_bins(torch.tensor(x_num), n_bins=len(x_num)-1)
+                cont_embeddings = PiecewiseLinearEmbeddings(bins, self.d_embedding, activation=False, version="B")
+            else:
+                raise ValueError("Please include the correct embedding type!")
+        else:
+            raise ValueError("Please include the embedding type!")
+
+        if len(x_cat) != 0:
+            x_num = cont_embeddings(torch.tensor(x_num)).flatten(1)
+            # print(f"x size is {x[0].shape}")
+            # print(f"x_cat size is {x_cat.shape}")
+            # x.extend(torch.tensor(x_cat))
+            x = torch.cat([x_num, x_cat], dim=1)
+            # print(f"x size is {x.shape}")
+            return x
+        else:
+            return cont_embeddings(x_num).flatten(1)
+

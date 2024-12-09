@@ -8,7 +8,11 @@ device = "cpu"
 [model_params]
 is_y_cond = false
 d_in = 11
+#d_in = 169 #7*24+1
 num_classes = 0
+#embedding_type = ''
+embedding_type = 'LinearEmbeddings'
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
@@ -22,7 +26,8 @@ num_timesteps = 100
 gaussian_loss_type = "mse"
 
 [train.main]
-steps = 30000
+#steps = 30000
+steps = 3
 lr = 0.0003442062504112041
 weight_decay = 0.0
 #batch_size = 4096

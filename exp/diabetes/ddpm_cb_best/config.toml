@@ -6,9 +6,12 @@ num_numerical_features = 8
 device = "cpu"
 
 [model_params]
-d_in = 8
+#d_in = 8
+d_in = 192  #8*24
 num_classes = 2
 is_y_cond = true
+embedding_type = 'PiecewiseLinearEmbeddings'
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
@@ -23,7 +26,7 @@ gaussian_loss_type = "mse"
 
 [train.main]
 #steps = 30000
-steps = 10000
+steps = 3
 #lr = 1.1510940031144828e-05
 lr = 0.0015
 weight_decay = 0.0

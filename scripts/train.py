@@ -177,18 +177,27 @@ def train(
     K = np.array(dataset.get_category_sizes('train'))
     if len(K) == 0 or T_dict['cat_encoding'] == 'one-hot':
         K = np.array([0])
-    print(K)
+    print(f"categorical encoding's size is {K}")
 
     num_numerical_features = dataset.X_num['train'].shape[1] if dataset.X_num is not None else 0
+    print(f"num_numerical_features is {num_numerical_features}")
+    print(f"x_cat size is {dataset.X_cat['train'].shape}")
     d_in = np.sum(K) + num_numerical_features
-    model_params['d_in'] = d_in
-    print(d_in)
+    if len(model_params['embedding_type']) != 0:
+        d_embedding_in = np.sum(K) + num_numerical_features*model_params['d_embedding']
+    else:
+        d_embedding_in = np.sum(K) + num_numerical_features
+    model_params['d_in'] = int(d_embedding_in)
+
+    print(f"model input dimension is {d_embedding_in}")
     
     print(model_params)
+    # embedding_type = 'LinearEmbeddings'
     model = get_model(
         model_type,
         model_params,
         num_numerical_features,
+        d_out = d_in,
         category_sizes=dataset.get_category_sizes('train')
     )
     model.to(device)
@@ -206,7 +215,9 @@ def train(
         gaussian_loss_type=gaussian_loss_type,
         num_timesteps=num_timesteps,
         scheduler=scheduler,
-        device=device
+        device=device,
+        embedding_type=model_params['embedding_type'],
+        d_embedding=model_params['d_embedding']
     )
     diffusion.to(device)
     diffusion.train()
