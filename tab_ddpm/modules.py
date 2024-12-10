@@ -553,6 +553,7 @@ class Embedding:
         else:
             raise ValueError("Please include the embedding type!")
 
+        cont_embeddings.to(x_in.device)
         if len(x_cat) != 0:
             x_num = cont_embeddings(torch.tensor(x_num)).flatten(1)
             x = torch.cat([x_num, x_cat], dim=1)
