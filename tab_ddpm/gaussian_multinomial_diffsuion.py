@@ -588,7 +588,8 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
             return -loss
     
-    def mixed_loss(self, x, out_dict):
+    # def mixed_loss(self, x, out_dict):
+    def forward(self, x, out_dict):
         b = x.shape[0]
         device = x.device
         t, pt = self.sample_time(b, device, 'uniform')
