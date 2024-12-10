@@ -10,6 +10,7 @@ import lib
 import pandas as pd
 from opacus import PrivacyEngine
 
+
 class Trainer:
     def __init__(self, diffusion, train_iter, lr, weight_decay, steps, device=torch.device('cpu')):
         # self.diffusion = diffusion
@@ -129,7 +130,7 @@ class Trainer:
                     break
                 if (step + 1) % self.print_every == 0:
                     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
-                self.loss_history.loc[len(self.loss_history)] =[step + 1, mloss, gloss, mloss + gloss]
+                self.loss_history.loc[len(self.loss_history)] = [step + 1, mloss, gloss, mloss + gloss]
                 last_loss_multi, last_loss_gauss = mloss, gloss
                 curr_count = 0
                 curr_loss_gauss = 0.0
@@ -140,23 +141,25 @@ class Trainer:
             # print(f"self.diffusion.parameters() is {self.diffusion.parameters}")
             step += 1
         print(f"eps is {self._eps}")
+
+
 def train(
-    parent_dir,
-    real_data_path = 'data/higgs-small',
-    steps = 1000,
-    lr = 0.002,
-    weight_decay = 1e-4,
-    batch_size = 1024,
-    model_type = 'mlp',
-    model_params = None,
-    num_timesteps = 1000,
-    gaussian_loss_type = 'mse',
-    scheduler = 'cosine',
-    T_dict = None,
-    num_numerical_features = 0,
-    device = torch.device('cuda:1'),
-    seed = 0,
-    change_val = False
+        parent_dir,
+        real_data_path='data/higgs-small',
+        steps=1000,
+        lr=0.002,
+        weight_decay=1e-4,
+        batch_size=1024,
+        model_type='mlp',
+        model_params=None,
+        num_timesteps=1000,
+        gaussian_loss_type='mse',
+        scheduler='cosine',
+        T_dict=None,
+        num_numerical_features=0,
+        device=torch.device('cuda:1'),
+        seed=0,
+        change_val=False
 ):
     real_data_path = os.path.normpath(real_data_path)
     parent_dir = os.path.normpath(parent_dir)
@@ -184,20 +187,20 @@ def train(
     # print(f"x_cat size is {dataset.X_cat['train'].shape}")
     d_in = np.sum(K) + num_numerical_features
     if len(model_params['embedding_type']) != 0:
-        d_embedding_in = np.sum(K) + num_numerical_features*model_params['d_embedding']
+        d_embedding_in = np.sum(K) + num_numerical_features * model_params['d_embedding']
     else:
         d_embedding_in = np.sum(K) + num_numerical_features
     model_params['d_in'] = int(d_embedding_in)
 
     print(f"model input dimension is {d_embedding_in}")
-    
+
     print(model_params)
     # embedding_type = 'LinearEmbeddings'
     model = get_model(
         model_type,
         model_params,
         num_numerical_features,
-        d_out = d_in,
+        d_out=d_in,
         category_sizes=dataset.get_category_sizes('train')
     )
     model.to(device)
@@ -205,8 +208,7 @@ def train(
     # train_loader = lib.prepare_beton_loader(dataset, split='train', batch_size=batch_size)
     # train_loader = lib.prepare_fast_dataloader(dataset, split='train', batch_size=batch_size)
     # train_loader = lib.prepare_fast_torch_dataloader(dataset, split='train', batch_size=batch_size)
-    train_loader = lib.prepare_torch_dataloader(dataset, split='train', batch_size=batch_size,shuffle=False)
-
+    train_loader = lib.prepare_torch_dataloader(dataset, split='train', batch_size=batch_size, shuffle=False)
 
     diffusion = GaussianMultinomialDiffusion(
         num_classes=K,
