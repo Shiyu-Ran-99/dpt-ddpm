@@ -1,0 +1,17 @@
+{'dataset': 'diabetes', 'model': 'ddpm_cb_best', 'embedding_type': '', 'dcr_value': 1.3592084173868029}
+{'dataset': 'diabetes', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearEmbeddings', 'dcr_value': 1.2071889775458353}
+{'dataset': 'diabetes', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearReLUEmbeddings', 'dcr_value': 1.203993533367509}
+{'dataset': 'diabetes', 'model': 'ddpm_cb_best', 'embedding_type': 'PeriodicEmbeddings', 'dcr_value': 1.1841250391890439}
+{'dataset': 'diabetes', 'model': 'ddpm_cb_best', 'embedding_type': 'PiecewiseLinearEmbeddings', 'dcr_value': 1.2056573929593406}
+
+{'dataset': 'abalone', 'model': 'ddpm_cb_best', 'embedding_type': '', 'dcr_value': 1.276198727219384}
+{'dataset': 'abalone', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearEmbeddings', 'dcr_value': 1.2989699505202497}
+{'dataset': 'abalone', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearReLUEmbeddings', 'dcr_value': 1.3002393906025471}
+{'dataset': 'abalone', 'model': 'ddpm_cb_best', 'embedding_type': 'PeriodicEmbeddings', 'dcr_value': 1.2794586254180778}
+{'dataset': 'abalone', 'model': 'ddpm_cb_best', 'embedding_type': 'PiecewiseLinearEmbeddings', 'dcr_value': 1.3011761879109551}
+
+{'dataset': 'churn2', 'model': 'ddpm_cb_best', 'embedding_type': '', 'dcr_value': 1.006485198654106}
+{'dataset': 'churn2', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearEmbeddings', 'dcr_value': 1.0136070243767121}
+{'dataset': 'churn2', 'model': 'ddpm_cb_best', 'embedding_type': 'LinearReLUEmbeddings', 'dcr_value': 1.0053793421399662}
+{'dataset': 'churn2', 'model': 'ddpm_cb_best', 'embedding_type': 'PeriodicEmbeddings', 'dcr_value': 0.9900378880552654}
+{'dataset': 'churn2', 'model': 'ddpm_cb_best', 'embedding_type': 'PiecewiseLinearEmbeddings', 'dcr_value': 1.01840902764092}

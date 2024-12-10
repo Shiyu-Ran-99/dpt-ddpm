@@ -541,10 +541,10 @@ class Embedding:
             elif self.embedding_type == 'LinearReLUEmbeddings':
                 cont_embeddings = LinearReLUEmbeddings(self.num_numerical_features, self.d_embedding)
             elif self.embedding_type == 'PeriodicEmbeddings':
-                cont_embeddings = PeriodicEmbeddings(self.d_embedding, lite=False)
-            elif self.embedding_type == 'PiecewiseLinearEncoding':
-                bins = compute_bins(torch.tensor(x_num), n_bins=len(x_num)-1)
-                cont_embeddings = PiecewiseLinearEncoding(bins)
+                cont_embeddings = PeriodicEmbeddings(self.num_numerical_features, self.d_embedding, lite=False)
+            # elif self.embedding_type == 'PiecewiseLinearEncoding':
+            #     bins = compute_bins(torch.tensor(x_num), n_bins=len(x_num)-1)
+            #     cont_embeddings = PiecewiseLinearEncoding(bins)
             elif self.embedding_type == 'PiecewiseLinearEmbeddings':
                 bins = compute_bins(torch.tensor(x_num), n_bins=len(x_num)-1)
                 cont_embeddings = PiecewiseLinearEmbeddings(bins, self.d_embedding, activation=False, version="B")
