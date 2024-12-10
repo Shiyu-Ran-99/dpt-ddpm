@@ -7,13 +7,14 @@ def get_model(
     model_name,
     model_params,
     n_num_features,
+    d_out,
     category_sizes
 ): 
     print(model_name)
     if model_name == 'mlp':
-        model = MLPDiffusion(**model_params)
+        model = MLPDiffusion(d_out, **model_params)
     elif model_name == 'resnet':
-        model = ResNetDiffusion(**model_params)
+        model = ResNetDiffusion(d_out, **model_params)
     else:
         raise "Unknown model!"
     return model

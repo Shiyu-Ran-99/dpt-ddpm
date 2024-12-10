@@ -52,11 +52,16 @@ def sample(
 
     num_numerical_features_ = D.X_num['train'].shape[1] if D.X_num is not None else 0
     d_in = np.sum(K) + num_numerical_features_
-    model_params['d_in'] = int(d_in)
+    if len(model_params['embedding_type']) != 0:
+        d_embedding_in = np.sum(K) + num_numerical_features_ * model_params['d_embedding']
+    else:
+        d_embedding_in = np.sum(K) + num_numerical_features_
+    model_params['d_in'] = int(d_embedding_in)
     model = get_model(
         model_type,
         model_params,
         num_numerical_features_,
+        d_out=d_in,
         category_sizes=D.get_category_sizes('train')
     )
 
