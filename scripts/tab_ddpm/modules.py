@@ -475,6 +475,9 @@ class MLPDiffusion(nn.Module):
             # embedding
             e = Embedding(self.embedding_type, num_numerical_features, d_embedding, self.d_in)
             x = e.embedd(x)
+        # add attention module
+        multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.8).to(device=x.device)
+        x, attn_output_weights = multihead_attn(x, x, x)
         x = self.proj(x) + emb
         return self.mlp(x)
         # x = self.mlp(x)
@@ -522,15 +525,14 @@ class Embedding:
         self.num_numerical_features = num_numerical_features
         self.d_embedding = d_embedding
         self.d_in = d_in
-        self.d_cat = None
+        self.d_cat = 0
         if self.d_in != self.num_numerical_features*self.d_embedding:
             self.d_cat = self.d_in - self.num_numerical_features*self.d_embedding
 
     def embedd(self, x_in):
         cont_embeddings = None
-        x = []
         x_cat = []
-        if self.d_cat is not None:
+        if self.d_cat != 0:
             x_num = x_in[:, :self.num_numerical_features]
             x_cat = x_in[:, self.num_numerical_features:]
         else:
@@ -556,12 +558,13 @@ class Embedding:
         cont_embeddings.to(x_in.device)
         if len(x_cat) != 0:
             x_num = cont_embeddings(torch.tensor(x_num)).flatten(1)
-            # print(f"x size is {x[0].shape}")
-            # print(f"x_cat size is {x_cat.shape}")
-            # x.extend(torch.tensor(x_cat))
             x = torch.cat([x_num, x_cat], dim=1)
-            # print(f"x size is {x.shape}")
-            return x
         else:
-            return cont_embeddings(x_num).flatten(1)
+            x = cont_embeddings(x_num).flatten(1)
+
+        # return x
+        # add attention module
+        multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.5)
+        attn_output, attn_output_weights = multihead_attn(x, x, x)
+        return attn_output
 

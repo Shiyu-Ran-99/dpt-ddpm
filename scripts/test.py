@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 import pickle
 import lib
-tmp = np.load("data/abalone/X_num_train.npy")
-# print(tmp)
+tmp = np.load("data/diabetes/X_num_train.npy")
+print(f"real data is {tmp[:5, :]}")
 print(f"num is {tmp.shape}")
 #
 tmp1 = np.load("data/abalone/X_cat_train.npy", allow_pickle=True)
@@ -15,23 +15,23 @@ tmp1 = np.load("data/abalone/X_cat_train.npy", allow_pickle=True)
 print("-------------")
 print(f"cat is {tmp1.shape}")
 # print(tmp2)
-import os
-# real_data_path = 'data/diabetes/'
-# X_num_train, X_cat_train, y_train = lib.read_pure_data(real_data_path, 'train')
-#
-# X = lib.concat_to_pd(X_num_train, X_cat_train, y_train)
-#
-# X.columns = [str(_) for _ in X.columns]
-# print(f"fit data X is {X.iloc[0]}")
-#
-# parent_dir = 'exp/diabetes/tvae/'
-# device = "cpu"
-# with open(parent_dir + "tvae.obj", 'rb') as f:
-#     synthesizer = pickle.load(f)
-#     synthesizer.decoder = synthesizer.decoder.to(device)
-#
-# gen_data = synthesizer.sample(5, seed=0)
-# print(f"gen_data is {gen_data}")
+# import os
+real_data_path = 'data/diabetes/'
+X_num_train, X_cat_train, y_train = lib.read_pure_data(real_data_path, 'train')
+
+X = lib.concat_to_pd(X_num_train, X_cat_train, y_train)
+
+X.columns = [str(_) for _ in X.columns]
+print(f"fit data X is {X.iloc[0]}")
+
+parent_dir = 'exp/diabetes/tvae/'
+device = "cpu"
+with open(parent_dir + "tvae.obj", 'rb') as f:
+    synthesizer = pickle.load(f)
+    synthesizer.decoder = synthesizer.decoder.to(device)
+
+gen_data = synthesizer.sample(5, seed=0)
+print(f"gen_data is {gen_data}")
 
 
 
@@ -40,19 +40,20 @@ import os
 # from privacy_utility_framework.privacy_utility_framework.metrics.privacy_metrics.distance import dcr_class
 # original_name = "Diabetes"
 # synthetic_name = "TVAE"
-
-# Initialize PrivacyMetricManager
+#
+# # Initialize PrivacyMetricManager
 # p = privacy_metric_manager.PrivacyMetricManager()
-
+#
 # dcr_class.DCRCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
-
-#-------------------- verify if the difference results from data-preprocessing
+#
+# # -------------------- verify if the difference results from data-preprocessing
 # from privacy_utility_framework.privacy_utility_framework.synthesizers.synthesizers import GaussianMixtureModel, \
 #     GaussianCopulaModel, CTGANModel, CopulaGANModel, TVAEModel, RandomModel
 # import pandas as pd
 # tvae_model = TVAEModel.load_model("synprivutil/synthetic_models/diabetes_models/tvae_model.pkl")
 # data = pd.read_csv("synprivutil/datasets/original/diabetes.csv", delimiter=',')
 # print("successfully loaded")
-# samples_from_loaded_model = tvae_model.sample(768)
+# # samples_from_loaded_model = tvae_model.sample(768)
+# samples_from_loaded_model = tvae_model.sample(5)
 # print(f"~~~~~Samples from loaded TVAE Model~~~~~\n {samples_from_loaded_model}")
 

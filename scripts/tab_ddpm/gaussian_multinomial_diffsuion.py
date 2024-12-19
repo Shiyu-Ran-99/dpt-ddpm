@@ -620,15 +620,15 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
         if x_num.shape[1] > 0:
             noise = torch.randn_like(x_num)
-            x_num_t = self.gaussian_q_sample(x_num, t, noise=noise)
+            x_num_t = self.gaussian_q_sample(x_num, t, noise=noise) # add noise
         if x_cat.shape[1] > 0:
             log_x_cat = index_to_log_onehot(x_cat.long(), self.num_classes)
             # log_x_cat = index_to_log_onehot(torch.where(x_cat>0, 1, 0), self.num_classes)
-            log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t)
+            log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t) # add noise
 
         x_in = torch.cat([x_num_t, log_x_cat_t], dim=1)
 
-        model_out = self._denoise_fn(
+        model_out = self._denoise_fn(  # network to fit "denoise" (the reverse process of adding noise)
             x_in,
             t,
             self.num_numerical_features,
