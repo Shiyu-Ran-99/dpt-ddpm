@@ -14,7 +14,7 @@ class Trainer:
         # self.train_iter = train_iter
         # 2024-11-13 Shiyu add
         self._delta = 1e-5
-        self.epsilon_target = 50.0
+        self.epsilon_target = 70.0
         self.steps = steps
         self.init_lr = lr
         self.diffusion = diffusion
