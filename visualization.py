@@ -8,7 +8,7 @@ original_data_y = pd.DataFrame(np.load('data/diabetes/y_train.npy'))
 original_data = pd.concat([original_data_x, original_data_y], ignore_index=True, axis=1)
 dp_x = pd.DataFrame(np.load("exp/diabetes/ddpm_cb_best/X_num_train.npy"))
 dp_y = pd.DataFrame(np.load("exp/diabetes/ddpm_cb_best/y_train.npy"))
-synthetic_data = pd.concat([pd.DataFrame(dp_x), pd.DataFrame(dp_y)], ignore_index=True, axis=1)
+synthetic_data = pd.concat([dp_x, dp_y], ignore_index=True, axis=1)
 
 i = 0
 plt.hist(original_data[i], bins=50, color = 'green', label='original')
