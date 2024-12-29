@@ -21,7 +21,7 @@ class Trainer:
         # self.train_iter = train_iter
         # 2024-11-13 Shiyu add
         self._delta = 1e-5
-        self.epsilon_target = 1.0
+        self.epsilon_target = 50.0
         self.steps = steps
         self.init_lr = lr
         # self.diffusion_copy = deepcopy(diffusion)
@@ -54,19 +54,6 @@ class Trainer:
         #     # grad_sample_mode="functorch"
         # )
 
-        # self.ema_model = deepcopy(self.diffusion._denoise_fn)
-        # for param in self.ema_model.parameters():
-        #     param.detach_()
-
-        # self.train_iter = train_iter
-        # self.steps = steps
-        # self.init_lr = lr
-        # self.optimizer = torch.optim.AdamW(self.diffusion.parameters(), lr=lr, weight_decay=weight_decay)
-        # self.device = device
-        # self.loss_history = pd.DataFrame(columns=['step', 'mloss', 'gloss', 'loss'])
-        # self.log_every = 100
-        # self.print_every = 500
-        # self.ema_every = 1000
 
     def _anneal_lr(self, step):
         frac_done = step / self.steps
@@ -88,16 +75,12 @@ class Trainer:
 
         return loss_multi, loss_gauss
 
-    def run_loop(self):
+    def trainer(self):
         step = 0
         curr_loss_multi = 0.0
         curr_loss_gauss = 0.0
 
         curr_count = 0
-
-        last_loss_multi = float('inf')
-        last_loss_gauss = float('inf')
-
         while step < self.steps:
             for x, out_dict in self.train_iter:
                 # x = x[0]
@@ -109,12 +92,6 @@ class Trainer:
                     print(f"Privacy budget reached in step {step}.")
                     return self
 
-                # x, out_dict = next(self.train_iter)
-                # print(f"len of out_dict is {len(out_dict)}")
-                # out_dict = {'y': out_dict}
-                # print(f"len of x is {len(x)}")
-                # print(f"x is {x}")
-                # print(f"len of x is {len(x)}")
                 batch_loss_multi, batch_loss_gauss = self._run_step(x, out_dict)
 
                 self._anneal_lr(step)
@@ -126,12 +103,12 @@ class Trainer:
             if (step + 1) % self.log_every == 0:
                 mloss = np.around(curr_loss_multi / curr_count, 4)
                 gloss = np.around(curr_loss_gauss / curr_count, 4)
-                if mloss + gloss > last_loss_multi + last_loss_gauss:
+                if mloss + gloss > self.last_loss_multi + self.last_loss_gauss:
                     break
                 if (step + 1) % self.print_every == 0:
                     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
                 self.loss_history.loc[len(self.loss_history)] = [step + 1, mloss, gloss, mloss + gloss]
-                last_loss_multi, last_loss_gauss = mloss, gloss
+                self.last_loss_multi, self.last_loss_gauss = mloss, gloss
                 curr_count = 0
                 curr_loss_gauss = 0.0
                 curr_loss_multi = 0.0
@@ -140,6 +117,29 @@ class Trainer:
             # update_ema(self.ema_model.parameters(), self.model.parameters())
             # print(f"self.diffusion.parameters() is {self.diffusion.parameters}")
             step += 1
+
+    def run_loop(self):
+
+        self.last_loss_multi = float('inf')
+        self.last_loss_gauss = float('inf')
+        # train without DP
+        self.trainer()
+
+        # add DP_SGD module
+        self.diffusion, self.optimizer, self.train_iter = self.privacy_engine.make_private_with_epsilon(
+            module=self.diffusion,
+            optimizer=self.optimizer,
+            data_loader=self.train_iter,
+            target_epsilon=self.epsilon_target,
+            target_delta=self._delta,
+            epochs=self.steps,
+            max_grad_norm=1.0,
+            poisson_sampling=True,
+            # grad_sample_mode="functorch"
+        )
+        # train with DP
+        self.trainer()
+
         print(f"eps is {self._eps}")
 
 

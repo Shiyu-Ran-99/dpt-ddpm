@@ -50,7 +50,7 @@ print(len(synthetic_data))
 print(synthetic_data.columns)
 
 original_name = "Diabetes"
-synthetic_name = "TVAE"
+synthetic_name = "DDPM-CB-BEST"
 
 # Initialize PrivacyMetricManager
 p = privacy_metric_manager.PrivacyMetricManager()
@@ -105,9 +105,14 @@ def Merge(dict1, dict2):
 results = Merge(results_p, results_u)
 dict = {}
 for key, value in results.items():
-    dict[key] = value
+    tmp = {}
+    tmp[key] = value
     # Print results
     print(f"{key}: {value}")
+    file = open("metrics.txt", "a")
+    file.write(f"{tmp}")
+    file.write("\n")
+    file.close()
 
 # # compute SPEARMAN
 # corr_s = correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
@@ -120,9 +125,9 @@ for key, value in results.items():
 #     json.dump(dict,f)
 #     print("Computing metrics are done.")
 
-# print(results.items())
+print(results.items())
 # key, value = results.items()
-file = open("metrics_1.txt", "a")
-file.write(f"{dict}")
-file.write("\n")
-file.close()
+# file = open("metrics.txt", "a")
+# file.write(f"{dict}")
+# file.write("\n")
+# file.close()

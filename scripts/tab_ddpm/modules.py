@@ -471,18 +471,15 @@ class MLPDiffusion(nn.Module):
                 y = y.resize(y.size(0), 1).float()
             emb += F.silu(self.label_emb(y))
 
+        # 1.embedding
         if len(self.embedding_type) != 0:
-            # embedding
             e = Embedding(self.embedding_type, num_numerical_features, d_embedding, self.d_in)
             x = e.embedd(x)
-        # add attention module
-        multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.8).to(device=x.device)
-        x, attn_output_weights = multihead_attn(x, x, x)
+        # # 2.add attention module
+        # multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.8).to(device=x.device)
+        # x, attn_output_weights = multihead_attn(x, x, x)
         x = self.proj(x) + emb
         return self.mlp(x)
-        # x = self.mlp(x)
-        # # x = torch.nn.Linear(x.shape[1], self.d_in)(x)
-        # return x
 
 class ResNetDiffusion(nn.Module):
     def __init__(self, d_out, embedding_type, d_embedding, d_in, num_classes, is_y_cond, rtdl_params, dim_t = 256):
