@@ -14,7 +14,8 @@ class Trainer:
         # self.train_iter = train_iter
         # 2024-11-13 Shiyu add
         self._delta = 1e-5
-        self.epsilon_target = 70.0
+        self.epsilon_target = 100.0
+        print(f"epsilon_target is {self.epsilon_target}")
         self.steps = steps
         self.init_lr = lr
         self.diffusion = diffusion
@@ -30,17 +31,17 @@ class Trainer:
         self.ema_every = 1000
 
         self.privacy_engine = PrivacyEngine(accountant="rdp", secure_mode=False)
-        self.diffusion, self.optimizer, self.train_iter = self.privacy_engine.make_private_with_epsilon(
-            module=self.diffusion,
-            optimizer=self.optimizer,
-            data_loader=self.train_iter,
-            target_epsilon=self.epsilon_target,
-            target_delta=self._delta,
-            epochs=self.steps,
-            max_grad_norm=1.0,
-            poisson_sampling=True,
-            # grad_sample_mode="functorch"
-        )
+        # self.diffusion, self.optimizer, self.train_iter = self.privacy_engine.make_private_with_epsilon(
+        #     module=self.diffusion,
+        #     optimizer=self.optimizer,
+        #     data_loader=self.train_iter,
+        #     target_epsilon=self.epsilon_target,
+        #     target_delta=self._delta,
+        #     epochs=self.steps,
+        #     max_grad_norm=1.0,
+        #     poisson_sampling=True,
+        #     # grad_sample_mode="functorch"
+        # )
 
     def _anneal_lr(self, step):
         frac_done = step / self.steps
@@ -61,20 +62,15 @@ class Trainer:
         self.optimizer.step()
 
         return loss_multi, loss_gauss
-
-    def run_loop(self):
+    
+    def trainer(self):
         step = 0
         curr_loss_multi = 0.0
         curr_loss_gauss = 0.0
 
         curr_count = 0
-
-        last_loss_multi = float('inf')
-        last_loss_gauss = float('inf')
-
         while step < self.steps:
             for x, out_dict in self.train_iter:
-
                 self._eps = self.privacy_engine.get_epsilon(self._delta)
                 # print(f"eps is {self._eps}")
                 if self._eps >= self.epsilon_target:
@@ -92,21 +88,43 @@ class Trainer:
             if (step + 1) % self.log_every == 0:
                 mloss = np.around(curr_loss_multi / curr_count, 4)
                 gloss = np.around(curr_loss_gauss / curr_count, 4)
-                if mloss + gloss > last_loss_multi + last_loss_gauss:
+                if mloss + gloss > self.last_loss_multi + self.last_loss_gauss:
                     break
                 if (step + 1) % self.print_every == 0:
                     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
-                self.loss_history.loc[len(self.loss_history)] =[step + 1, mloss, gloss, mloss + gloss]
-                last_loss_multi, last_loss_gauss = mloss, gloss
+                self.loss_history.loc[len(self.loss_history)] = [step + 1, mloss, gloss, mloss + gloss]
+                self.last_loss_multi, self.last_loss_gauss = mloss, gloss
                 curr_count = 0
                 curr_loss_gauss = 0.0
                 curr_loss_multi = 0.0
 
             update_ema(self.ema_model.parameters(), self.diffusion._denoise_fn.parameters())
-            # update_ema(self.ema_model.parameters(), self.model.parameters())
-            # print(f"self.diffusion.parameters() is {self.diffusion.parameters}")
             step += 1
+
+    def run_loop(self):
+
+        self.last_loss_multi = float('inf')
+        self.last_loss_gauss = float('inf')
+        # train without DP
+        self.trainer()
+
+        # add DP_SGD module
+        self.diffusion, self.optimizer, self.train_iter = self.privacy_engine.make_private_with_epsilon(
+            module=self.diffusion,
+            optimizer=self.optimizer,
+            data_loader=self.train_iter,
+            target_epsilon=self.epsilon_target,
+            target_delta=self._delta,
+            epochs=self.steps,
+            max_grad_norm=1.0,
+            poisson_sampling=True,
+            # grad_sample_mode="functorch"
+        )
+        # train with DP
+        self.trainer()
+
         print(f"eps is {self._eps}")
+        
 
 def train(
     parent_dir,

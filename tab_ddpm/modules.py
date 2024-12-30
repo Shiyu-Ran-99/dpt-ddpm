@@ -475,13 +475,14 @@ class MLPDiffusion(nn.Module):
             # embedding
             e = Embedding(self.embedding_type, num_numerical_features, d_embedding, self.d_in)
             x = e.embedd(x)
-        # x = self.proj(x) + emb
-        # return self.mlp(x)
-        # add attention module
-        multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.5).to(device=x.device)
-        x, attn_output_weights = multihead_attn(x, x, x)
         x = self.proj(x) + emb
         return self.mlp(x)
+    
+        # # add attention module
+        # multihead_attn = torch.nn.MultiheadAttention(x.shape[1], 1, dropout=0.5).to(device=x.device)
+        # x, attn_output_weights = multihead_attn(x, x, x)
+        # x = self.proj(x) + emb
+        # return self.mlp(x)
         
 
 class ResNetDiffusion(nn.Module):

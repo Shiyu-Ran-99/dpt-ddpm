@@ -70,8 +70,8 @@ metric_p_list = \
                                               synthetic_name=synthetic_name, aux_cols=['Pregnancies', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome'], secret='Glucose', n_attacks=100, control=control_orig),
         linkability_class.LinkabilityCalculator(original_data, synthetic_data, original_name=original_name,
                                       synthetic_name=synthetic_name, aux_cols=(['DiabetesPedigreeFunction', 'Age'], ['BMI', 'Glucose', 'BloodPressure', 'Pregnancies']), n_attacks=200, control=control_orig),
-        singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
-                                      synthetic_name=synthetic_name)
+        # singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
+        #                               synthetic_name=synthetic_name)
     ]
 p.add_metric(metric_p_list)
 results_p = p.evaluate_all()
@@ -106,6 +106,10 @@ for key, value in results.items():
     dict[key] = value
     # Print results
     print(f"{key}: {value}")
+    file = open("metrics.txt", "a")
+    file.write(f"{key}:{value}")
+    file.write("\n")
+    file.close()
 
 # # compute SPEARMAN
 # corr_s = correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
@@ -120,7 +124,7 @@ for key, value in results.items():
 
 # print(results.items())
 # key, value = results.items()
-file = open("metrics.txt", "a")
-file.write(f"{dict}")
-file.write("\n")
-file.close()
+# file = open("metrics.txt", "a")
+# file.write(f"{dict}")
+# file.write("\n")
+# file.close()
