@@ -146,6 +146,8 @@ def train(
 ):
     real_data_path = os.path.normpath(real_data_path)
     parent_dir = os.path.normpath(parent_dir)
+    print(f"the dataset is {real_data_path.split('/')[1]}")
+    print(f"the model is {parent_dir.split('/')[2]}")
 
     zero.improve_reproducibility(seed)
 

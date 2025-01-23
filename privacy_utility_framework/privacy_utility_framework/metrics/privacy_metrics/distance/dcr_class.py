@@ -34,6 +34,7 @@ class DCRCalculator(PrivacyMetricCalculator):
 
         # Define distance metric and feature weights for calculations
         self.distance_metric = distance_metric
+        # print(f"original data shape is {self.original.data.shape[1]}")
         self.weights = weights if weights is not None else np.ones(self.original.data.shape[1])
 
     def evaluate(self) -> float:
@@ -48,8 +49,10 @@ class DCRCalculator(PrivacyMetricCalculator):
         synthetic = self.synthetic.transformed_normalized_data
 
         # Apply feature weights to both datasets
-        weighted_original_data = original * self.weights
-        weighted_synthetic_data = synthetic * self.weights
+        # weighted_original_data = original * self.weights
+        # weighted_synthetic_data = synthetic * self.weights
+        weighted_original_data = original
+        weighted_synthetic_data = synthetic
 
         # Compute pairwise distances between synthetic and original data
         dists = distance.cdist(weighted_synthetic_data, weighted_original_data, metric=self.distance_metric)
