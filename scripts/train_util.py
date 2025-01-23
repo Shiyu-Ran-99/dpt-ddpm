@@ -21,7 +21,7 @@ class Trainer:
         # self.train_iter = train_iter
         # 2024-11-13 Shiyu add
         self._delta = 1e-5
-        self.epsilon_target = 50.0
+        self.epsilon_target = 70.0
         self.steps = steps
         self.init_lr = lr
         # self.diffusion_copy = deepcopy(diffusion)
@@ -104,6 +104,7 @@ class Trainer:
                 mloss = np.around(curr_loss_multi / curr_count, 4)
                 gloss = np.around(curr_loss_gauss / curr_count, 4)
                 if mloss + gloss > self.last_loss_multi + self.last_loss_gauss:
+                    print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
                     break
                 if (step + 1) % self.print_every == 0:
                     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')

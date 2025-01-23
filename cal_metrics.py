@@ -26,11 +26,11 @@ from synprivutil.privacy_utility_framework.privacy_utility_framework.metrics.uti
 o_x_train = np.load('data/diabetes/X_num_train.npy')
 o_x_val = np.load('data/diabetes/X_num_val.npy')
 o_x_test = np.load('data/diabetes/X_num_test.npy')
-s = np.load('exp/diabetes/tvae/X_num_train.npy')
+s = np.load('/Users/pigr/Downloads/noEmbed_eps1/X_num_train.npy')
 o_y_train = np.load('data/diabetes/y_train.npy')
 o_y_val = np.load('data/diabetes/y_val.npy')
 o_y_test = np.load('data/diabetes/y_test.npy')
-s_y = np.load('exp/diabetes/tvae/y_train.npy')
+s_y = np.load('/Users/pigr/Downloads/noEmbed_eps1/y_train.npy')
 o = pd.concat([pd.DataFrame(o_x_train), pd.DataFrame(o_x_val), pd.DataFrame(o_x_test)], ignore_index=True, axis=0)
 o_y = pd.concat([pd.DataFrame(o_y_train), pd.DataFrame(o_y_val), pd.DataFrame(o_y_test)], ignore_index=True, axis=0)
 original_data = pd.concat([pd.DataFrame(o), pd.DataFrame(o_y)], ignore_index=True, axis=1)
@@ -72,8 +72,8 @@ metric_p_list = \
                                               synthetic_name=synthetic_name, aux_cols=['Pregnancies', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome'], secret='Glucose', n_attacks=100, control=control_orig),
         linkability_class.LinkabilityCalculator(original_data, synthetic_data, original_name=original_name,
                                       synthetic_name=synthetic_name, aux_cols=(['DiabetesPedigreeFunction', 'Age'], ['BMI', 'Glucose', 'BloodPressure', 'Pregnancies']), n_attacks=200, control=control_orig),
-        singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
-                                      synthetic_name=synthetic_name)
+        # singlingout_class.SinglingOutCalculator(original_data, synthetic_data, original_name=original_name,
+        #                               synthetic_name=synthetic_name)
     ]
 p.add_metric(metric_p_list)
 results_p = p.evaluate_all()

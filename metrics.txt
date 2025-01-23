@@ -1,14 +1,13 @@
-{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.26048204003178327}
-{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8927221477855227}
-{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9001041666666667}
-{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.9001041666666667}
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9832187072743065}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9121149890645353}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.996875}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.996875}
 {"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
-{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.042731316544081216))}
-{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.006413515404794143, ci=(0.0, 0.027827116256112353))}
-{"SinglingOutCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.11098874146092848, ci=(0.08372280963705037, 0.1382546732848066))}
-{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.09151043041670413, 'median': 0.04729994939358963, 'var': 0.03545925691473742}}
-{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.800558316517522}
-{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9164666986388101}
-{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6819389752044449}
-{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7065219907407407}
-{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5798399072264793}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.009908767067407596, ci=(0.0, 0.0526004507815572))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.017421170309003416))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.3241703660544376, 'median': 0.3634899747491069, 'var': 0.0553453447068827}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8611145057285176}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": nan}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.3517374233836147}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.2615335648148148}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 1.4149312299890597}
