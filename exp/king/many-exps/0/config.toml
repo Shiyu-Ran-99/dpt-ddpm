@@ -1,41 +1,35 @@
 seed = 0
-parent_dir = "exp/diabetes/ddpm_cb_best"
-real_data_path = "data/diabetes/"
+parent_dir = "exp/king/many-exps/0"
+real_data_path = "data/king/"
+num_numerical_features = 17
 model_type = "mlp"
-num_numerical_features = 8
-device = "cpu"
+device = "cuda:1"
 
 [model_params]
-#d_in = 8
-d_in = 192  #8*24
-num_classes = 2
-is_y_cond = true
-embedding_type = ''
-#embedding_type = 'LinearEmbeddings'
+d_in = 30
+is_y_cond = false
+num_classes = 0
+embedding_type = ""
 d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
-    128,
-    512,
+    256,
+    256,
 ]
 dropout = 0.0
 
 [diffusion_params]
 num_timesteps = 1000
 gaussian_loss_type = "mse"
+scheduler = "cosine"
 
 [train.main]
-#steps = 30000
 steps = 1000
-#lr = 1.1510940031144828e-05
-lr = 0.0015
-lr_dp = 0.015
-#lr_dp = 0.0015
-#lr =0.008
-weight_decay = 0.0 #l2正则化
+lr = 0.0002288113668475521
+lr_dp = 0.007260485065938446
+weight_decay = 0.0
 batch_size = 4096
-#batch_size = 64
 
 [train.T]
 seed = 0
@@ -47,8 +41,8 @@ cat_encoding = "__none__"
 y_policy = "default"
 
 [sample]
-num_samples = 500
-batch_size = 10000
+num_samples = 27600
+batch_size = 20000
 seed = 0
 
 [eval.type]

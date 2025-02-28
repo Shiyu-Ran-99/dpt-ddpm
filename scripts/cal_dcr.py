@@ -11,13 +11,14 @@ mbar = tqdm(models)
 
 res = defaultdict(int)
 for model in mbar:
-    real_path = 'data/'+'diabetes'
-    fake_path = 'exp/'+'diabetes'+'/'+model
+    real_path = 'data/'+'california'
+    fake_path = 'exp/'+'california'+'/'+model
     dists = privacy_metrics(real_path=real_path,fake_path=fake_path, data_percent=15)
     privacy_val = np.median(dists)
     res[model] = privacy_val
     mbar.set_description(f"{model} is completed")
 
-with open("dcr/diabetes_dcr.json","w") as f:
-    json.dump(res,f)
-    print("Computing DCR values are done.")
+print(res)
+# with open("dcr/diabetes_dcr.json","w") as f:
+#     json.dump(res,f)
+#     print("Computing DCR values are done.")

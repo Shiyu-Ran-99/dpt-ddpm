@@ -20,6 +20,7 @@ import warnings
 warnings.simplefilter('ignore')
 import numpy as np
 from .utils import *
+from scipy.stats import wasserstein_distance_nd
 
 """
 Based in part on: https://github.com/lucidrains/denoising-diffusion-pytorch/blob/5989f4c77eafcdc6be0fb4739f0f277a6dd7f7d8/denoising_diffusion_pytorch/denoising_diffusion_pytorch.py#L281
@@ -221,7 +222,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         B, C = x.shape[:2]
         assert t.shape == (B,)
 
-        model_variance = torch.cat([self.posterior_variance[1].unsqueeze(0).to(x.device), (1. - self.alphas)[1:]], dim=0)
+        model_variance = torch.cat([self.posterior_variance[1].unsqueeze(0).type(torch.float32).to(x.device), (1. - self.alphas)[1:]], dim=0)
         # model_variance = self.posterior_variance.to(x.device)
         model_log_variance = torch.log(model_variance)
 
@@ -300,7 +301,9 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
         terms = {}
         if self.gaussian_loss_type == 'mse':
-            terms["loss"] = mean_flat((noise - model_out) ** 2)
+            terms["loss"] = mean_flat((noise - model_out) ** 2) #l2
+            # terms["loss"] = mean_flat(torch.abs(noise - model_out)) #l1
+            # terms["loss"] = torch.nn.SmoothL1Loss()(model_out, noise) #smoothl1loss
         elif self.gaussian_loss_type == 'kl':
             terms["loss"] = self._vb_terms_bpd(
                 model_output=model_out,
@@ -642,6 +645,10 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         # model_out_num = model_out[:, :d_num]
         # model_out_cat = model_out[:, d_num:]
 
+        # # use conditional --2025 add
+        # model_out_num = torch.cat(model_out_num, out_dict['y'])
+        # noise = torch.cat(noise, out_dict['y'])
+
         loss_multi = torch.zeros((1,)).float()
         loss_gauss = torch.zeros((1,)).float()
         if x_cat.shape[1] > 0:
@@ -653,7 +660,23 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         # loss_multi = torch.where(out_dict['y'] == 1, loss_multi, 2 * loss_multi)
         # loss_gauss = torch.where(out_dict['y'] == 1, loss_gauss, 2 * loss_gauss)
 
-        return loss_multi.mean(), loss_gauss.mean()
+        # add wassertein loss --2025-01
+        # loss_ws = wasserstein_distance_nd(noise.detach().numpy(), model_out_num.detach().numpy())
+
+        # add information loss --2025-01
+        # noise_y = torch.nn.Linear(1,len(out_dict['y']))(out_dict['y'].reshape(-1,1).to(noise.dtype))
+        loss_mean = torch.norm(
+            torch.mean(model_out.view(-1), dim=0) - torch.mean(torch.cat([noise,out_dict['y'].reshape(-1,1)],1).view(-1), dim=0), 1)
+        loss_std = torch.norm(
+            torch.std(model_out.view(-1), dim=0) - torch.std(torch.cat([noise,out_dict['y'].reshape(-1,1)],1).view(-1), dim=0), 1)
+        loss_info = loss_mean + loss_std
+
+        # # detect outliers --2025-01
+        threshold = 0.001
+        diff = torch.abs(model_out_num.contiguous().view(-1) - noise.contiguous().view(-1))
+        loss_outlier = torch.where(diff < threshold, diff ** 2, diff)
+
+        return loss_multi.mean(), loss_gauss.mean(), loss_info, loss_outlier.mean()
     
     @torch.no_grad()
     def mixed_elbo(self, x0, out_dict):

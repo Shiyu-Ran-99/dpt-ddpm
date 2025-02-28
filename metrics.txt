@@ -1,13 +1,346 @@
-{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9832187072743065}
-{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9121149890645353}
-{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.996875}
-{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.996875}
+eps=70
+l2+cInfo:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7308779552771976}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9424003094064641}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9130989583333333}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.9130989583333333}
 {"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
-{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.009908767067407596, ci=(0.0, 0.0526004507815572))}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.011504735484662852, ci=(0.0, 0.13038897528579646))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.0359173018762682))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.11253752926500396, 'median': 0.1586978073213238, 'var': 0.11120559408511824}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.9457396807294612}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8658288398514514}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5243557793274097}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5715520833333333}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9584475544162024}
+
+l2+cInfo+ws:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5751900516513758}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9436822488589167}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9863489583333334}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.9863489583333334}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.010007933347776856, ci=(0.0, 0.06090384274333342))}
 {"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.017421170309003416))}
-{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.3241703660544376, 'median': 0.3634899747491069, 'var': 0.0553453447068827}}
-{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8611145057285176}
-{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": nan}
-{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.3517374233836147}
-{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.2615335648148148}
-{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 1.4149312299890597}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.2172691112075265, 'median': 0.24256119698972803, 'var': 0.030066940008690472}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8956220903851508}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8861298453134023}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.41041835875977134}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.2748842592592593}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9986955404893066}
+
+improve-l2+cInfo+adapLr:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.10839402805393968}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6809357812822212}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.557625}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.557625}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.05887843915988293, ci=(0.0, 0.1883490666357902))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.032067577023970714, ci=(0.0, 0.06459951029279679))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.025987892288424564, 'median': 0.03262194649441966, 'var': 0.0036741542654707645}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8962275693259567}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9621453421053738}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8685101882792545}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8922048611111111}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.23245958874331532}
+
+improve-l2+cInfo:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.16011224530907725}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8107423853404657}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7518385416666666}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.7518385416666666}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.12241986020201082))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.015236024880781449))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.04368156090357627, 'median': 0.05204857478737157, 'var': 0.006992800823082682}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.903820908342391}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9554424730616357}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8140140742977641}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8240752314814814}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.3188245344391005}
+
+--------------------------------------------------
+improve-l2+cInfo+eps1+original+adaptive lr:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.815791129715582}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9395784059258573}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9708854166666667}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.9708854166666667}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.03160531970873137, ci=(0.0, 0.1166557594688103))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.029002166803360253, ci=(0.0, 0.11392333146420502))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.14178136194241875, 'median': 0.32917597868647697, 'var': 0.1251749347778054}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.9227487273146548}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8955790116456219}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.4123961029275826}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.44787847222222216}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 1.1032731255704937}
+
+--------------------------------------------
+improve-l2+cInfo+eps10+adaptive lr:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.11653894401939556}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7158085565173592}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5800416666666667}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.5800416666666667}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.08996777301591836, ci=(0.0, 0.2060004651345736))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.01290982819156815, ci=(0.0, 0.04339332575100307))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.02563605212222061, 'median': 0.04219146938037047, 'var': 0.005245112040745486}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8961813608773983}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9545977448615076}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8558237384670949}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8808773148148147}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.24314539383274666}
+
+improve-l2+cInfo+eps1+adaptive lr:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.12047341950974359}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7397644366853446}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6246666666666667}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.6246666666666667}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.04710275132790634, ci=(0.0, 0.1760913535193735))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.015236024880781449))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.028922056878113264, 'median': 0.04588974265300413, 'var': 0.00534557980675016}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8933732041539}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.950480182212247}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8510606267684483}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8744398148148149}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.2479629165612047}
+
+improve-l2+cInfo+eps70+adaptive lr:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.11585902225863233}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7169267678823684}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5779479166666667}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.5779479166666667}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.046554539602387236, ci=(0.0, 0.1716036410511112))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.01290982819156815, ci=(0.0, 0.04339332575100307))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.02402346305483498, 'median': 0.04150106231916862, 'var': 0.0034183041059312304}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8936406919461038}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.965454221024207}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8619648607749839}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8802766203703704}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.23640682888618628}
+
+improve-l2+cInfo+eps70+adaptive lr+epochs1000:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.4790599820896324}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8935276854606355}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8075260416666667}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.8075260416666667}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.1267101060123764))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.02500929914519093))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.10141331313867158, 'median': 0.14920109385546199, 'var': 0.06577535531871354}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.9093774055850365}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8804305123414713}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6017442173791567}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5573715277777778}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7221446296627972}
+
+improve-l2+cInfo+eps70+adaptive lr+epochs1000+lossoutlier:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.2650601483034568}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8664305040989202}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6309843749999999}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.6309843749999999}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.04261925959405141))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.02500929914519093))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.06016765218822018, 'median': 0.058931131059097835, 'var': 0.01881746861972028}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8875118272556902}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8857968107753537}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7861163633235289}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.793122685185185}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.38702702788731497}
+
+improve-l2+cInfo+eps1+adaptive lr+epochs1000+lossoutlier:
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.4855740123117411}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.913006180719809}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8023645833333333}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.8023645833333333}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.024719566799005416))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.01820740752446315))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.10376863114995905, 'median': 0.1624640836990841, 'var': 0.05689404025545855}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.8825206319839929}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.9099207718247109}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6762332902210264}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6908726851851852}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.6726482983679601}
+
+improve-l2+cInfo+eps1+adaptive lr+epochs1000+lossoutlier+increase partition(2, 4):
+{"DCRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.4051556648467049}
+{"NNDRCalculator('Diabetes', 'DDPM-CB-BEST')": 0.892166753641754}
+{"AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7342083333333334}
+{"AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST')": 0.7342083333333334}
+{"DisclosureCalculator('Diabetes', 'DDPM-CB-BEST')": (0.0, 0.0)}
+{"InferenceCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.11707948569748866))}
+{"LinkabilityCalculator('Diabetes', 'DDPM-CB-BEST')": PrivacyRisk(value=0.0, ci=(0.0, 0.014396140138094798))}
+{"BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST')": {'mean': 0.04120398886104213, 'median': 0.059427863413582305, 'var': 0.05083401686916665}}
+{"MICalculator('Diabetes', 'DDPM-CB-BEST')": 0.9024013299163883}
+{"CorrelationCalculator('Diabetes', 'DDPM-CB-BEST')": 0.8838946144643535}
+{"JSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7188386306516477}
+{"KSCalculator('Diabetes', 'DDPM-CB-BEST')": 0.7787129629629629}
+{"WassersteinCalculator('Diabetes', 'DDPM-CB-BEST')": 0.5333311754181286}
+
+
+------------------------- former 1000
+improve-l2+cInfo+eps70+adaptive lr+epochs10000+lossoutlier - insurance:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.13099805626839403
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.663690567463035
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.5555000000000001
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.5555000000000001
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.037311804708732764, 'median': 0.014097935979783488, 'var': 0.019049179128873845}
+MICalculator('insurance', 'ddpm_cb_best'):0.9804018678083679
+JSCalculator('insurance', 'ddpm_cb_best'):0.9333479417488468
+KSCalculator('insurance', 'ddpm_cb_best'):0.9469166666666665
+
+improve-l2+cInfo+eps70+adaptive lr+epochs30000+lossoutlier - abalone:
+DCRCalculator('abalone', 'ddpm_cb_best'):0.08878320754108933
+NNDRCalculator('abalone', 'ddpm_cb_best'):0.7979081251038455
+AdversarialAccuracyCalculator('abalone', 'ddpm_cb_best'):0.5695
+AdversarialAccuracyCalculator_NN('abalone', 'ddpm_cb_best'):0.5695
+BasicStatsCalculator('abalone', 'ddpm_cb_best'):{'mean': 0.04460992362938745, 'median': 0.033566630527165, 'var': 0.01692328339013244}
+MICalculator('abalone', 'ddpm_cb_best'):0.937365223581323
+JSCalculator('abalone', 'ddpm_cb_best'):0.8577139745760104
+KSCalculator('abalone', 'ddpm_cb_best'):0.8989090909090908
+
+improve-l2+cInfo+eps70+adaptive lr+epochs30000+lossoutlier - insurance:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.07366451940273407
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6074293065897003
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.5135000000000001
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.5135000000000001
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.047233417029909, 'median': 0.028964412171744558, 'var': 0.02088024145491646}
+MICalculator('insurance', 'ddpm_cb_best'):0.9797676310855672
+JSCalculator('insurance', 'ddpm_cb_best'):0.9311706052286417
+KSCalculator('insurance', 'ddpm_cb_best'):0.9285000000000001
+
+improve-l2+cInfo+eps70+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.10303050103821247
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.616584507716929
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.509
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.509
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.025319143433425034, 'median': 0.17290132652469822, 'var': 0.011719015893889071}
+MICalculator('insurance', 'ddpm_cb_best'):0.9810394500455542
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9719174092497634
+JSCalculator('insurance', 'ddpm_cb_best'):0.9465406734847823
+KSCalculator('insurance', 'ddpm_cb_best'):0.9593333333333334
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.288413787965668
+
+improve-l2+cInfo+eps1+adaptive lr+epochs30000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.11743792271157051
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.5707994608411466
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.7144999999999999
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.7144999999999999
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.09795111692736282, 'median': 0.19880152273450488, 'var': 0.03315354335294047}
+MICalculator('insurance', 'ddpm_cb_best'):0.9717067940943925
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9337473490456882
+JSCalculator('insurance', 'ddpm_cb_best'):0.8623690050233193
+KSCalculator('insurance', 'ddpm_cb_best'):0.8525
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.7238268906496318
+
+improve-l2+cInfo+eps05+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.1939313806233105
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6241756337687566
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.862
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.862
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.10944483123366838, 'median': 0.2498723656912721, 'var': 0.0531964902160608}
+MICalculator('insurance', 'ddpm_cb_best'):0.9745905357895496
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9078375262735526
+JSCalculator('insurance', 'ddpm_cb_best'):0.818952772838876
+KSCalculator('insurance', 'ddpm_cb_best'):0.8272500000000002
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.9717070094536533
+
+improve-l2+cInfo+eps1+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.1755298053302867
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.598334211551939
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.8085
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.8085
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.09050210504478713, 'median': 0.2184056652044364, 'var': 0.051509791755506434}
+MICalculator('insurance', 'ddpm_cb_best'):0.9744169630871424
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9080111183914101
+JSCalculator('insurance', 'ddpm_cb_best'):0.8368029000157478
+KSCalculator('insurance', 'ddpm_cb_best'):0.8547500000000001
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.8348627431210186
+
+improve-l2+cInfo+eps03+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.18869723310643752
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6358455925312605
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.8795
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.8795
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.12517470756091523, 'median': 0.26827959745086266, 'var': 0.05416176235450298}
+MICalculator('insurance', 'ddpm_cb_best'):0.9749422799778878
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9140290069237111
+JSCalculator('insurance', 'ddpm_cb_best'):0.8076501834144548
+KSCalculator('insurance', 'ddpm_cb_best'):0.8076666666666666
+WassersteinCalculator('insurance', 'ddpm_cb_best'):1.0020108325043708
+
+improve-l2+cInfo+eps100+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.11026464630672218
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6238277353953368
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.5085
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.5085
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.03740407066933361, 'median': 0.1706982815423921, 'var': 0.01315246195843777}
+MICalculator('insurance', 'ddpm_cb_best'):0.9795015833439025
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9680456648809259
+JSCalculator('insurance', 'ddpm_cb_best'):0.942723201801661
+KSCalculator('insurance', 'ddpm_cb_best'):0.9529166666666665
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.33613418581607746
+
+improve-l2+cInfo+eps50+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.11055457295063116
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6147367876759388
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.5225
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.5225
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.03358223526827071, 'median': 0.1762704760943735, 'var': 0.012675469051368347}
+MICalculator('insurance', 'ddpm_cb_best'):0.9801866367605849
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9697902155098023
+JSCalculator('insurance', 'ddpm_cb_best'):0.9417466024469944
+KSCalculator('insurance', 'ddpm_cb_best'):0.9512499999999999
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.33534832128804115
+
+improve-l2+cInfo+eps30+adaptive lr+epochs10000+lossoutlier - insurance --改良后:
+DCRCalculator('insurance', 'ddpm_cb_best'):0.10857734847294111
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.6151090363705365
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.575
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.575
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.041203978968613685, 'median': 0.18824666200009735, 'var': 0.019561656386580407}
+MICalculator('insurance', 'ddpm_cb_best'):0.980760361496631
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9671906565670076
+JSCalculator('insurance', 'ddpm_cb_best'):0.9222698576732774
+KSCalculator('insurance', 'ddpm_cb_best'):0.9295
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.38447080213991724
+
+improve-l2+cInfo+eps10+adaptive lr+epochs1000+lossoutlier - wilt --改良后:
+DCRCalculator('wilt', 'ddpm_cb_best'):0.04699720347967307
+NNDRCalculator('wilt', 'ddpm_cb_best'):0.7997915663999536
+AdversarialAccuracyCalculator('wilt', 'ddpm_cb_best'):0.504
+AdversarialAccuracyCalculator_NN('wilt', 'ddpm_cb_best'):0.504
+BasicStatsCalculator('wilt', 'ddpm_cb_best'):{'mean': 0.003846827933488301, 'median': 0.002863697888416924, 'var': 0.012148192566807542}
+MICalculator('wilt', 'ddpm_cb_best'):0.9980382612311887
+CorrelationCalculator('wilt', 'ddpm_cb_best'):0.9153558457808723
+JSCalculator('wilt', 'ddpm_cb_best'):0.8954759220803244
+KSCalculator('wilt', 'ddpm_cb_best'):0.9486666666666667
+WassersteinCalculator('wilt', 'ddpm_cb_best'):0.0738810258220881
+
+improved-california-10000epochs:
+DCRCalculator('california', 'ddpm_cb_best'):0.10823397675442777
+NNDRCalculator('california', 'ddpm_cb_best'):0.8535253324287758
+AdversarialAccuracyCalculator('california', 'ddpm_cb_best'):0.593
+AdversarialAccuracyCalculator_NN('california', 'ddpm_cb_best'):0.593
+BasicStatsCalculator('california', 'ddpm_cb_best'):{'mean': 0.007887849632564519, 'median': 0.015518373653451878, 'var': 0.006960073224805904}
+MICalculator('california', 'ddpm_cb_best'):0.9769179740513326
+CorrelationCalculator('california', 'ddpm_cb_best'):0.9618602181217382
+JSCalculator('california', 'ddpm_cb_best'):0.8709277231132843
+KSCalculator('california', 'ddpm_cb_best'):0.9204444444444445
+WassersteinCalculator('california', 'ddpm_cb_best'):0.1596648898161433
+
+improved-buddy-eps50:
+DCRCalculator('buddy', 'ddpm_cb_best'):1.5006061873703584
+NNDRCalculator('buddy', 'ddpm_cb_best'):0.9109336569669899
+AdversarialAccuracyCalculator('buddy', 'ddpm_cb_best'):0.7565
+AdversarialAccuracyCalculator_NN('buddy', 'ddpm_cb_best'):0.7565
+BasicStatsCalculator('buddy', 'ddpm_cb_best'):{'mean': 0.0740762059462694, 'median': 0.07758815205494576, 'var': 0.031274360541774064}
+MICalculator('buddy', 'ddpm_cb_best'):0.9935304828272725
+CorrelationCalculator('buddy', 'ddpm_cb_best'):nan
+JSCalculator('buddy', 'ddpm_cb_best'):0.9162042712541203
+KSCalculator('buddy', 'ddpm_cb_best'):0.9188169014084507
+WassersteinCalculator('buddy', 'ddpm_cb_best'):2.04318689612969

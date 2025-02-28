@@ -45,7 +45,8 @@ def main():
     #     device = torch.device(raw_config['device'])
     # else:
         # device = torch.device('cuda:1')
-    device = torch.device('cpu')
+    # device = torch.device('cpu')
+    device = torch.device('mps')
     
     timer = zero.Timer()
     timer.run()

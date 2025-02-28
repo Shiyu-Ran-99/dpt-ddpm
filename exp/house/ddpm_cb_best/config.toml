@@ -9,6 +9,8 @@ device = "cuda:0"
 d_in = 17
 num_classes = 0
 is_y_cond = false
+embedding_type = ""
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
@@ -27,10 +29,11 @@ gaussian_loss_type = "mse"
 scheduler = "cosine"
 
 [train.main]
-steps = 30000
-lr = 0.0013926185951764255
-weight_decay = 0.0
-batch_size = 4096
+steps = 1000
+lr = 0.0014926185951764255
+lr_dp = 0.00995674
+weight_decay = 0.5
+batch_size = 256
 
 [train.T]
 seed = 0

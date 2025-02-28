@@ -59,12 +59,12 @@ if os.path.exists(f'data/{args.dataset}/X_cat_train.npy'):
 
 # generate data
 # num data
-s = pd.DataFrame(np.load(f'exp/{args.dataset}/{args.model}/X_num_train.npy', allow_pickle=True))
-s_y = pd.DataFrame(np.load(f'exp/{args.dataset}/{args.model}/y_train.npy', allow_pickle=True))
+s = pd.DataFrame(np.load(f'/Users/pigr/Desktop/uzh论文/pythonProject/tab-ddpm/exp/{args.dataset}/ddpm_cb_best/X_num_train.npy', allow_pickle=True))
+s_y = pd.DataFrame(np.load(f'/Users/pigr/Desktop/uzh论文/pythonProject/tab-ddpm/exp/{args.dataset}/ddpm_cb_best/y_train.npy', allow_pickle=True))
 
 # cat data
-if os.path.exists(f'exp/{args.dataset}/{args.model}/X_cat_train.npy'):
-    s_cat = pd.DataFrame(np.load(f'exp/{args.dataset}/{args.model}/X_cat_train.npy', allow_pickle=True))
+if os.path.exists(f'/Users/pigr/Desktop/uzh论文/pythonProject/tab-ddpm/exp/{args.dataset}/ddpm_cb_best/X_cat_train.npy'):
+    s_cat = pd.DataFrame(np.load(f'/Users/pigr/Desktop/uzh论文/pythonProject/tab-ddpm/exp/{args.dataset}/ddpm_cb_best/X_cat_train.npy', allow_pickle=True))
 
     s = pd.concat([s, s_cat], ignore_index=True, axis=1)
 
@@ -130,14 +130,14 @@ metric_p_list = \
     [
         dcr_class.DCRCalculator(original_data, synthetic_data, original_name=original_name,
                                 synthetic_name=synthetic_name),
-        nndr_class.NNDRCalculator(original_data, synthetic_data, original_name=original_name,
-                                  synthetic_name=synthetic_name),
-        adversarial_accuracy_class.AdversarialAccuracyCalculator(original_data, synthetic_data,
-                                                                 original_name=original_name,
-                                                                 synthetic_name=synthetic_name),
-        adversarial_accuracy_class.AdversarialAccuracyCalculator_NN(original_data, synthetic_data,
-                                                                    original_name=original_name,
-                                                                    synthetic_name=synthetic_name),
+        # nndr_class.NNDRCalculator(original_data, synthetic_data, original_name=original_name,
+        #                           synthetic_name=synthetic_name),
+        # adversarial_accuracy_class.AdversarialAccuracyCalculator(original_data, synthetic_data,
+        #                                                          original_name=original_name,
+        #                                                          synthetic_name=synthetic_name),
+        # adversarial_accuracy_class.AdversarialAccuracyCalculator_NN(original_data, synthetic_data,
+        #                                                             original_name=original_name,
+        #                                                             synthetic_name=synthetic_name),
         # keys = [’Age’, ’BMI’, ’DiabetesPedigreeFunction’, ’Glucose’, ’BloodPressure’], target = 'Outcome'
         # disco.DisclosureCalculator(original_data, synthetic_data, original_name=original_name,
         #                               synthetic_name=synthetic_name, target='Outcome', keys=['Glucose','BloodPressure','BMI','DiabetesPedigreeFunction','Age']),
@@ -157,16 +157,16 @@ u = utility_metric_manager.UtilityMetricManager()
 
 # Define metrics to evaluate
 metric_u_list = [
-    basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name,
-                                     synthetic_name=synthetic_name),
-    mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name,
-                                    synthetic_name=synthetic_name),
+    # basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name,
+    #                                  synthetic_name=synthetic_name),
+    # mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name,
+    #                                 synthetic_name=synthetic_name),
     # default method = 'pearson'
-    correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-    js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name,
-                               synthetic_name=synthetic_name),
-    ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-    wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
+    # correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    # js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name,
+    #                            synthetic_name=synthetic_name),
+    # ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    # wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
 ]
 
 # Add metrics to manager and evaluate
@@ -186,7 +186,7 @@ for key, value in results.items():
     dict[key] = value
     # Print results
     print(f"{key}: {value}")
-    file = open("metrics.txt", "a")
+    file = open("metrics_ws.txt", "a")
     file.write(f"{key}:{value}")
     file.write("\n")
     file.close()

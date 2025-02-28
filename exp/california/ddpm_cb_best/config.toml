@@ -28,11 +28,14 @@ num_timesteps = 1000
 gaussian_loss_type = "mse"
 
 [train.main]
-steps = 30000
+#steps = 3000
+steps = 3000
 #lr = 0.0013275991211473216
-lr = 0.01
+lr = 0.0003275991211473216
+lr_dp = 0.035561608872478806
 weight_decay = 0.0
-batch_size = 4096
+#batch_size = 4096
+batch_size = 256
 
 [train.T]
 seed = 0

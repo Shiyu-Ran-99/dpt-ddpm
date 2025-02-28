@@ -21,7 +21,7 @@ class Trainer:
         # self.train_iter = train_iter
         # 2024-11-13 Shiyu add
         self._delta = 1e-5
-        self.epsilon_target = 1.0
+        self.epsilon_target = 70.0
         self.steps = steps
         self.init_lr = lr
         # self.diffusion_copy = deepcopy(diffusion)
@@ -80,8 +80,8 @@ class Trainer:
             out_dict[k] = out_dict[k].long().to(self.device)
         self.optimizer.zero_grad()
         # loss_multi, loss_gauss = self.diffusion.mixed_loss(x, out_dict)
-        loss_multi, loss_gauss = self.diffusion(x, out_dict)
-        loss = loss_multi + loss_gauss
+        loss_multi, loss_gauss, loss_info = self.diffusion(x, out_dict)
+        loss = loss_multi + loss_gauss + loss_info
         # print(f"loss is {loss}")
         loss.backward()
         self.optimizer.step()
@@ -126,8 +126,9 @@ class Trainer:
             if (step + 1) % self.log_every == 0:
                 mloss = np.around(curr_loss_multi / curr_count, 4)
                 gloss = np.around(curr_loss_gauss / curr_count, 4)
-                if mloss + gloss > last_loss_multi + last_loss_gauss:
-                    break
+                # if mloss + gloss > last_loss_multi + last_loss_gauss:
+                #     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
+                #     break
                 if (step + 1) % self.print_every == 0:
                     print(f'Step {(step + 1)}/{self.steps} MLoss: {mloss} GLoss: {gloss} Sum: {mloss + gloss}')
                 self.loss_history.loc[len(self.loss_history)] = [step + 1, mloss, gloss, mloss + gloss]

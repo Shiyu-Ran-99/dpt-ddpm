@@ -9,6 +9,8 @@ device = "cuda:1"
 d_in = 9
 num_classes = 0
 is_y_cond = false
+embedding_type = ''
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
@@ -24,8 +26,9 @@ scheduler = "cosine"
 
 [train.main]
 steps = 1000
-lr = 0.001
-weight_decay = 1e-05
+lr = 0.0020099410620098234
+lr_dp = 0.02
+weight_decay = 0.0
 batch_size = 4096
 
 [train.T]
