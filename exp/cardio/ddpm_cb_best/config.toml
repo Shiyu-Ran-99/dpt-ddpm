@@ -8,6 +8,8 @@ seed = 0
 [model_params]
 is_y_cond = true
 num_classes = 2
+embedding_type = ''
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [

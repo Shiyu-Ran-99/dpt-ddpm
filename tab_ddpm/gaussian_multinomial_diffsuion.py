@@ -8,10 +8,19 @@ import torch
 import math
 from torch import Tensor
 from typing import Optional
+from rtdl_num_embeddings import (
+    LinearEmbeddings,
+    LinearReLUEmbeddings,
+    PeriodicEmbeddings,
+    PiecewiseLinearEncoding,
+    PiecewiseLinearEmbeddings,
+    compute_bins,
+)
 import warnings
 warnings.simplefilter('ignore')
 import numpy as np
 from .utils import *
+from scipy.stats import wasserstein_distance_nd
 
 """
 Based in part on: https://github.com/lucidrains/denoising-diffusion-pytorch/blob/5989f4c77eafcdc6be0fb4739f0f277a6dd7f7d8/denoising_diffusion_pytorch/denoising_diffusion_pytorch.py#L281
@@ -292,7 +301,9 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
         terms = {}
         if self.gaussian_loss_type == 'mse':
-            terms["loss"] = mean_flat((noise - model_out) ** 2)
+            terms["loss"] = mean_flat((noise - model_out) ** 2) #l2
+            # terms["loss"] = mean_flat(torch.abs(noise - model_out)) #l1
+            # terms["loss"] = torch.nn.SmoothL1Loss()(model_out, noise) #smoothl1loss
         elif self.gaussian_loss_type == 'kl':
             terms["loss"] = self._vb_terms_bpd(
                 model_output=model_out,
@@ -600,27 +611,24 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         b = x.shape[0]
         device = x.device
         t, pt = self.sample_time(b, device, 'uniform')
-        # print(f"t is {t}, and t's shape is {t.shape}")
 
         x_num = x[:, :self.num_numerical_features]
         x_cat = x[:, self.num_numerical_features:]
-        # print(f"x_num is {x_num}")
-        # print(f"x_cat is {x_cat}")
 
         x_num_t = x_num
         log_x_cat_t = x_cat
 
         if x_num.shape[1] > 0:
             noise = torch.randn_like(x_num)
-            x_num_t = self.gaussian_q_sample(x_num, t, noise=noise)
+            x_num_t = self.gaussian_q_sample(x_num, t, noise=noise) # add noise
         if x_cat.shape[1] > 0:
             log_x_cat = index_to_log_onehot(x_cat.long(), self.num_classes)
             # log_x_cat = index_to_log_onehot(torch.where(x_cat>0, 1, 0), self.num_classes)
-            log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t)
+            log_x_cat_t = self.q_sample(log_x_start=log_x_cat, t=t) # add noise
 
         x_in = torch.cat([x_num_t, log_x_cat_t], dim=1)
 
-        model_out = self._denoise_fn(
+        model_out = self._denoise_fn(  # network to fit "denoise" (the reverse process of adding noise)
             x_in,
             t,
             self.num_numerical_features,
@@ -631,8 +639,6 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
 
         model_out_num = model_out[:, :self.num_numerical_features]
         model_out_cat = model_out[:, self.num_numerical_features:]
-        # model_out_num = model_out[:, :d_num]
-        # model_out_cat = model_out[:, d_num:]
 
         loss_multi = torch.zeros((1,)).float()
         loss_gauss = torch.zeros((1,)).float()
@@ -642,10 +648,22 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         if x_num.shape[1] > 0:
             loss_gauss = self._gaussian_loss(model_out_num, x_num, x_num_t, t, noise)
 
-        # loss_multi = torch.where(out_dict['y'] == 1, loss_multi, 2 * loss_multi)
-        # loss_gauss = torch.where(out_dict['y'] == 1, loss_gauss, 2 * loss_gauss)
+        # add wassertein loss --2025-01
+        # loss_ws = wasserstein_distance_nd(noise.detach().numpy(), model_out_num.detach().numpy())
 
-        return loss_multi.mean(), loss_gauss.mean()
+        # add information loss --2025-01
+        loss_mean = torch.norm(
+            torch.mean(model_out.view(-1), dim=0) - torch.mean(torch.cat([noise,out_dict['y'].reshape(-1,1)],1).view(-1), dim=0), 1)
+        loss_std = torch.norm(
+            torch.std(model_out.view(-1), dim=0) - torch.std(torch.cat([noise,out_dict['y'].reshape(-1,1)],1).view(-1), dim=0), 1)
+        loss_info = loss_mean + loss_std
+
+        # # detect outliers --2025-01
+        threshold = 0.001
+        diff = torch.abs(model_out_num.contiguous().view(-1) - noise.contiguous().view(-1))
+        loss_outlier = torch.where(diff < threshold, diff ** 2, diff)
+
+        return loss_multi.mean(), loss_gauss.mean(), loss_info, loss_outlier.mean()
     
     @torch.no_grad()
     def mixed_elbo(self, x0, out_dict):
@@ -944,6 +962,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
     @torch.no_grad()
     def sample(self, num_samples, y_dist):
         b = num_samples
+        # print(f"in sample function, b is {b}")
         device = self.log_alpha.device
         z_norm = torch.randn((b, self.num_numerical_features), device=device)
 
@@ -952,6 +971,7 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         if has_cat:
             uniform_logits = torch.zeros((b, len(self.num_classes_expanded)), device=device)
             log_z = self.log_sample_categorical(uniform_logits)
+            # print(log_z)
 
         y = torch.multinomial(
             y_dist,
@@ -971,16 +991,24 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
             )
             model_out_num = model_out[:, :self.num_numerical_features]
             model_out_cat = model_out[:, self.num_numerical_features:]
+            # print(f"model_out_num is {model_out_num}")
+            # print(f"model_out_cat is {model_out_cat}")
             z_norm = self.gaussian_p_sample(model_out_num, z_norm, t, clip_denoised=False)['sample']
+            # print(f"z_norm is {z_norm}")
             if has_cat:
                 log_z = self.p_sample(model_out_cat, log_z, t, out_dict)
 
         print()
+        # print(f"nan in z_norm is {torch.any(z_norm.isnan(), dim=1)}")
         z_ohe = torch.exp(log_z).round()
         z_cat = log_z
         if has_cat:
             z_cat = ohe_to_categories(z_ohe, self.num_classes)
+        # print(f"nan in z_cat is {torch.any(z_cat.isnan(), dim=1)}")
         sample = torch.cat([z_norm, z_cat], dim=1).cpu()
+        # print(f"returned sample is {sample}")
+        # out_dict['y'] = torch.nan_to_num(out_dict['y'],nan=0)
+        # return torch.nan_to_num(sample), out_dict
         return sample, out_dict
     
     def sample_all(self, num_samples, batch_size, y_dist, ddim=False):
@@ -997,12 +1025,19 @@ class GaussianMultinomialDiffusion(torch.nn.Module):
         num_generated = 0
         while num_generated < num_samples:
             sample, out_dict = sample_fn(b, y_dist)
+            # print(f"sample is {sample}")
             mask_nan = torch.any(sample.isnan(), dim=1)
+            # print(f"mask_nan is {mask_nan}")
             sample = sample[~mask_nan]
+            # sample = torch.nan_to_num(sample)
+            # print(f"sample without nan is {sample}")
             out_dict['y'] = out_dict['y'][~mask_nan]
+            # out_dict['y'] = torch.nan_to_num(out_dict['y'])
 
             all_samples.append(sample)
             all_y.append(out_dict['y'].cpu())
+            # print(f"sample.shape[0] is {sample.shape[0]}")
+            # print(f"b is {b}")
             if sample.shape[0] != b:
                 raise FoundNANsError
             num_generated += sample.shape[0]

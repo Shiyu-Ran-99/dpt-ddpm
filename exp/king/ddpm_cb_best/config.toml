@@ -9,6 +9,8 @@ device = "cuda:0"
 d_in = 30
 is_y_cond = false
 num_classes = 0
+embedding_type = ''
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [

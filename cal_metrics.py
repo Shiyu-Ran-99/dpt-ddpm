@@ -20,7 +20,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, help='choose the dataset')
 parser.add_argument('--model', type=str, help='choose the model')
 args = parser.parse_args()
-
+print(f"dataset is {args.dataset}")
+print(f"model is {args.model}")
 
 '''
     Calculate privacy metrics and utility metrics
@@ -155,10 +156,10 @@ metric_u_list = [
     basic_stats.BasicStatsCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     mutual_information.MICalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     # # default method = 'pearson'
-    # correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
+    correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     js_similarity.JSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
     ks_test.KSCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name),
-    # wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
+    wasserstein.WassersteinCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)
 ]
 
 # Add metrics to manager and evaluate
@@ -172,14 +173,16 @@ def Merge(dict1, dict2):
 
 results = Merge(results_p, results_u)
 dict = {}
+file = open("metrics_benchmark.txt", "a")
 for key, value in results.items():
     dict[key] = value
     # Print results
     print(f"{key}: {value}")
-    file = open(f"metrics/{args.dataset}/metrics_{args.model}.txt", "a")
+    # file = open(f"metrics/{args.dataset}/metrics_{args.model}_dp_old.txt", "a")
     file.write(f"{key}:{value}")
     file.write("\n")
-    file.close()
+file.write("\n")
+file.close()
 
 # # compute SPEARMAN
 # corr_s = correlation.CorrelationCalculator(original_data, synthetic_data, original_name=original_name, synthetic_name=synthetic_name)

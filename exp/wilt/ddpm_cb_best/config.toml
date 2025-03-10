@@ -8,6 +8,8 @@ device = "cuda:0"
 [model_params]
 num_classes = 2
 is_y_cond = true
+embedding_type = ''
+d_embedding = 24
 
 [model_params.rtdl_params]
 d_layers = [
@@ -27,8 +29,9 @@ num_timesteps = 100
 gaussian_loss_type = "mse"
 
 [train.main]
-steps = 30000
+steps = 1000
 lr = 0.00010707356429215857
+lr_dp = 0.001
 weight_decay = 0.0
 batch_size = 256
 
