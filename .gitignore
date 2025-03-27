@@ -13,6 +13,7 @@ catboost_info/
 **/**.code-workspace
 **/**.csv
 exp/**/**/results_catboost.json
+exp/**/**/results_catboost_original.json
 exp/**/**/results_mlp.json
 
 configs/
