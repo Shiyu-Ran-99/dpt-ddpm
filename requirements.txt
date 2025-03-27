@@ -17,6 +17,7 @@ skorch==0.11.0
 tomli-w==0.4.0
 tomli==1.2.2
 tqdm==4.62.3
+ctgan==0.11.0
 
 # smote
 imbalanced-learn==0.7.0

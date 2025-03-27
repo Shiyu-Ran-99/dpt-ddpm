@@ -30,7 +30,7 @@ gaussian_loss_type = "mse"
 steps = 1000
 lr = 0.0015
 lr_dp = 0.015
-weight_decay = 0.0 #l2正则化
+weight_decay = 0.0
 batch_size = 4096
 
 [train.T]

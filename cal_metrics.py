@@ -173,7 +173,7 @@ def Merge(dict1, dict2):
 
 results = Merge(results_p, results_u)
 dict = {}
-file = open("metrics_benchmark.txt", "a")
+file = open(f"metrics_{args.model}_{args.dataset}.txt", "a")
 for key, value in results.items():
     dict[key] = value
     # Print results

@@ -1,6 +1,6 @@
-# TabDDPM: Modelling Tabular Data with Diffusion Models
+# DPTDDPM: Modelling Tabular Data with Diffusion Models with Differential Privacy
 
-This is the official code for our paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
+This code is built upon the TabDDPM: the official code is from [tab-ddpm](https://github.com/yandex-research/tab-ddpm), and paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
 
 <!-- ## Results
 You can view all the results and build your own tables with this [notebook](notebooks/Reports.ipynb). -->
@@ -53,8 +53,8 @@ tar -xvf data.tar
 
 All main scripts are in `scripts/` folder:
 
-- `scripts/pipeline.py` are used to train, sample and eval TabDDPM using a given config
-- `scripts/tune_ddpm.py` -- tune hyperparameters of TabDDPM
+- `scripts/pipeline.py` are used to train, sample and eval DPTDDPM using a given config
+- `scripts/tune_ddpm.py` -- tune hyperparameters of DPTDDPM
 - `scripts/eval_[catboost|mlp|simple].py` -- evaluate synthetic data using a tuned evaluation model or simple models
 - `scripts/eval_seeds.py` -- eval using multiple sampling and multuple eval seeds
 - `scripts/eval_seeds_simple.py` -- eval using multiple sampling and multuple eval seeds (for simple models)
@@ -64,7 +64,7 @@ All main scripts are in `scripts/` folder:
 Experiments folder (`exp/`):
 
 - All results and synthetic data are stored in `exp/[ds_name]/[exp_name]/` folder
-- `exp/[ds_name]/config.toml` is a base config for tuning TabDDPM
+- `exp/[ds_name]/config.toml` is a base config for tuning DPTDDPM
 - `exp/[ds_name]/eval_[catboost|mlp].json` stores results of evaluation (`scripts/eval_seeds.py`)
 
 To understand the structure of `config.toml` file, read `CONFIG_DESCRIPTION.md`.
@@ -72,6 +72,7 @@ To understand the structure of `config.toml` file, read `CONFIG_DESCRIPTION.md`.
 Baselines:
 
 - `smote/`
+- `CTGAN/` -- CTGAN [official repo](https://github.com/sdv-dev/CTGAN)
 - `CTGAN/` -- TVAE [official repo](https://github.com/sdv-dev/CTGAN)
 - `CTAB-GAN/` -- [official repo](https://github.com/Team-TUD/CTAB-GAN)
 - `CTAB-GAN-Plus/` -- [official repo](https://github.com/Team-TUD/CTAB-GAN-Plus)
@@ -79,11 +80,11 @@ Baselines:
 Benchmark:
 
 - `exp_[model_name].sh` -- bash script for baselines of each [model_name] including model training and metrics calculation
-- `benchmark.sh` -- bash script for benchmark experiments for DDPM model
+- `benchmark.sh` -- bash script for benchmark experiments for DPTDDPM model
 
 ### Examples
 
-<ins>Run TabDDPM tuning.</ins>
+<ins>Run DPTDDPM tuning.</ins>
 
 Template and example (`--eval_seeds` is optional):
 
@@ -92,7 +93,7 @@ python scripts/tune_ddpm.py [ds_name] [train_size] synthetic [catboost|mlp] [exp
 python scripts/tune_ddpm.py churn2 6500 synthetic catboost ddpm_tune --eval_seeds
 ```
 
-<ins>Run TabDDPM pipeline.</ins>
+<ins>Run DPTDDPM pipeline.</ins>
 
 Template and example (`--train`, `--sample`, `--eval` are optional):
 
@@ -101,7 +102,7 @@ python scripts/pipeline.py --config [path_to_your_config] --train --sample --eva
 python scripts/pipeline.py --config exp/churn2/ddpm_cb_best/config.toml --train --sample
 ```
 
-It takes approximately 7min to run the script above (NVIDIA GeForce RTX 2080 Ti).
+<!-- It takes approximately 7min to run the script above (NVIDIA GeForce RTX 2080 Ti). -->
 
 <ins>Run evaluation over seeds</ins>  
 Before running evaluation, you have to train the model with the given hyperparameters (the example above).

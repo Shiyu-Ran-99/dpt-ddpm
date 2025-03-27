@@ -12,8 +12,8 @@ catboost_info/
 **/**.tar
 **/**.code-workspace
 **/**.csv
-# exp/**/**/results_catboost.json
-# exp/**/**/results_mlp.json
+exp/**/**/results_catboost.json
+exp/**/**/results_mlp.json
 
 configs/
 data/
