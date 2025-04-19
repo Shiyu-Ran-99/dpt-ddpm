@@ -1,4 +1,5 @@
-# DPTDDPM: Modelling Tabular Data with Differentially Private Diffusion Models
+# DPT-DDPM: Differentially Private Tabular Data Denoising Diffusion Probabilistic Model
+##### --- Enhancing the Privacy and Utility of Diffusion Models for Tabular Datasets
 
 This code is built upon the TabDDPM: the official code is from [tab-ddpm](https://github.com/yandex-research/tab-ddpm), and paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
 
