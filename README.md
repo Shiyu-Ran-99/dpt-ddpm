@@ -4,7 +4,7 @@
 This code is built upon the TabDDPM: the official code is from [tab-ddpm](https://github.com/yandex-research/tab-ddpm), and paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
 
 <!-- ## Results
-You can view all the results and build your own tables with this [notebook](notebooks/Reports.ipynb). -->
+You can check all related experiment results through this link: https://drive.google.com/drive/folders/1GU5JHR6K8tq3lQAX-PlUJqh10rYLTqk0?usp=sharing
 
 ## Setup the environment
 
@@ -82,6 +82,8 @@ Benchmark:
 
 - `exp_[model_name].sh` -- bash script for baselines of each [model_name] including model training and metrics calculation
 - `benchmark.sh` -- bash script for benchmark experiments for DPTDDPM model
+- `cal_metrics.py` -- python file for calculating FEST metrics results
+- `cal_dcr.py` -- python file for calculating DCR metric results
 
 ### Examples
 
