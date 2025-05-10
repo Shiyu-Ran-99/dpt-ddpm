@@ -55,7 +55,7 @@ tar -xvf data.tar
 All main scripts are in `scripts/` folder:
 
 - `scripts/pipeline.py` are used to train, sample and eval DPTDDPM using a given config
-- `scripts/tune_dptddpm.py` -- tune hyperparameters of DPTDDPM
+- `scripts/tune_ddpm.py` -- tune hyperparameters of DPTDDPM
 - `scripts/eval_[catboost|mlp|simple].py` -- evaluate synthetic data using a tuned evaluation model or simple models
 - `scripts/eval_seeds.py` -- eval using multiple sampling and multuple eval seeds
 - `scripts/eval_seeds_simple.py` -- eval using multiple sampling and multuple eval seeds (for simple models)
