@@ -41,7 +41,7 @@ We upload the datasets used in the paper with our train/val/test splits (link be
 You could load the datasets with the following commands:
 
 ```bash
-conda activate tddpm
+conda activate dptddpm
 cd $PROJECT_DIR
 wget "https://www.dropbox.com/s/rpckvcs3vx7j605/data.tar?dl=0" -O data.tar
 tar -xvf data.tar
@@ -49,13 +49,13 @@ tar -xvf data.tar
 
 ### File structure
 
-`tab-ddpm/` -- implementation of the proposed method  
+`dpt-ddpm/` -- implementation of the proposed method  
 `tuned_models/` -- tuned hyperparameters of evaluation model (CatBoost or MLP)
 
 All main scripts are in `scripts/` folder:
 
 - `scripts/pipeline.py` are used to train, sample and eval DPTDDPM using a given config
-- `scripts/tune_ddpm.py` -- tune hyperparameters of DPTDDPM
+- `scripts/tune_dptddpm.py` -- tune hyperparameters of DPTDDPM
 - `scripts/eval_[catboost|mlp|simple].py` -- evaluate synthetic data using a tuned evaluation model or simple models
 - `scripts/eval_seeds.py` -- eval using multiple sampling and multuple eval seeds
 - `scripts/eval_seeds_simple.py` -- eval using multiple sampling and multuple eval seeds (for simple models)
@@ -92,8 +92,8 @@ Benchmark:
 Template and example (`--eval_seeds` is optional):
 
 ```bash
-python scripts/tune_ddpm.py [ds_name] [train_size] synthetic [catboost|mlp] [exp_name] --eval_seeds
-python scripts/tune_ddpm.py churn2 6500 synthetic catboost ddpm_tune --eval_seeds
+python scripts/tune_dptddpm.py [ds_name] [train_size] synthetic [catboost|mlp] [exp_name] --eval_seeds
+python scripts/tune_dptddpm.py churn2 6500 synthetic catboost ddpm_tune --eval_seeds
 ```
 
 <ins>Run DPTDDPM pipeline.</ins>
