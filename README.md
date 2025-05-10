@@ -92,8 +92,8 @@ Benchmark:
 Template and example (`--eval_seeds` is optional):
 
 ```bash
-python scripts/tune_dptddpm.py [ds_name] [train_size] synthetic [catboost|mlp] [exp_name] --eval_seeds
-python scripts/tune_dptddpm.py churn2 6500 synthetic catboost ddpm_tune --eval_seeds
+python scripts/tune_ddpm.py [ds_name] [train_size] synthetic [catboost|mlp] [exp_name] --eval_seeds
+python scripts/tune_ddpm.py churn2 6500 synthetic catboost ddpm_tune --eval_seeds
 ```
 
 <ins>Run DPTDDPM pipeline.</ins>
