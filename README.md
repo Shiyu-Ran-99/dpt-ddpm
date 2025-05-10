@@ -1,9 +1,11 @@
 # DPT-DDPM: Differentially Private Tabular Data Denoising Diffusion Probabilistic Model
+
 ##### --- Enhancing the Privacy and Utility of Diffusion Models for Tabular Datasets
 
 This code is built upon the TabDDPM: the official code is from [tab-ddpm](https://github.com/yandex-research/tab-ddpm), and paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
 
 ## Results
+
 You can check all related experiment results through this link: https://drive.google.com/drive/folders/1GU5JHR6K8tq3lQAX-PlUJqh10rYLTqk0?usp=sharing
 
 ## Setup the environment
@@ -15,8 +17,8 @@ You can check all related experiment results through this link: https://drive.go
    export REPO_DIR=/path/to/the/code
    cd $REPO_DIR
 
-   conda create -n tddpm python=3.9.7
-   conda activate tddpm
+   conda create -n dptddpm python=3.9.7
+   conda activate dptddpm
 
    pip install torch==1.10.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
    pip install -r requirements.txt
@@ -26,7 +28,7 @@ You can check all related experiment results through this link: https://drive.go
    conda env config vars set PROJECT_DIR=${REPO_DIR}
 
    conda deactivate
-   conda activate tddpm
+   conda activate dptddpm
    ```
 
 ## Running the experiments
@@ -80,8 +82,8 @@ Baselines:
 
 Benchmark:
 
-- `exp_[model_name].sh` -- bash script for baselines of each [model_name] including model training and metrics calculation
-- `benchmark.sh` -- bash script for benchmark experiments for DPTDDPM model
+- `benchmark/exp_[model_name].sh` -- bash script for baselines of each [model_name] including model training and metrics calculation
+- `benchmark/benchmark.sh` -- bash script for benchmark experiments for DPTDDPM model
 - `cal_metrics.py` -- python file for calculating FEST metrics results
 - `cal_dcr.py` -- python file for calculating DCR metric results
 
