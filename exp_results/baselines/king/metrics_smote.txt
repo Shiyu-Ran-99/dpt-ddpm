@@ -1,0 +1,8 @@
+DCRCalculator('king', 'smote'):0.08326220792205723
+NNDRCalculator('king', 'smote'):0.5379183112418187
+AdversarialAccuracyCalculator('king', 'smote'):0.4657723696490257
+AdversarialAccuracyCalculator_NN('king', 'smote'):0.4657723696490257
+BasicStatsCalculator('king', 'smote'):{'mean': 0.0170203055819634, 'median': 0.01226399755297122, 'var': 0.009739959981446746}
+MICalculator('king', 'smote'):0.9384318066858964
+JSCalculator('king', 'smote'):0.9107774071706102
+KSCalculator('king', 'smote'):0.9533223296311195

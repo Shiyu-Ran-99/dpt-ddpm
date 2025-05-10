@@ -1,0 +1,8 @@
+DCRCalculator('california', 'ddpm_cb_best'):0.12150275259064966
+NNDRCalculator('california', 'ddpm_cb_best'):0.83009609983359
+AdversarialAccuracyCalculator('california', 'ddpm_cb_best'):0.5075000000000001
+AdversarialAccuracyCalculator_NN('california', 'ddpm_cb_best'):0.5075000000000001
+BasicStatsCalculator('california', 'ddpm_cb_best'):{'mean': 0.005738993477548943, 'median': 0.005505238454131597, 'var': 0.02021860062939636}
+MICalculator('california', 'ddpm_cb_best'):0.9772203358935488
+JSCalculator('california', 'ddpm_cb_best'):0.9123382933541527
+KSCalculator('california', 'ddpm_cb_best'):0.9667777777777778

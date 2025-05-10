@@ -1,0 +1,8 @@
+DCRCalculator('adult', 'tvae'):0.7980732874248972
+NNDRCalculator('adult', 'tvae'):0.7023501153634378
+AdversarialAccuracyCalculator('adult', 'tvae'):0.581
+AdversarialAccuracyCalculator_NN('adult', 'tvae'):0.581
+BasicStatsCalculator('adult', 'tvae'):{'mean': 0.015386903910421171, 'median': 0.0007875456617462477, 'var': 0.011337077872957957}
+MICalculator('adult', 'tvae'):0.9465126943974115
+JSCalculator('adult', 'tvae'):0.9590571424949585
+KSCalculator('adult', 'tvae'):0.966694736842105

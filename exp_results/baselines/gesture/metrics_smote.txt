@@ -1,0 +1,8 @@
+DCRCalculator('gesture', 'smote'):0.016284341273488174
+NNDRCalculator('gesture', 'smote'):0.5207667323335429
+AdversarialAccuracyCalculator('gesture', 'smote'):0.7465951265495532
+AdversarialAccuracyCalculator_NN('gesture', 'smote'):0.7465951265495532
+BasicStatsCalculator('gesture', 'smote'):{'mean': 0.0242989947281279, 'median': 0.01992093310948741, 'var': 0.00698788777266531}
+MICalculator('gesture', 'smote'):0.9891966770587501
+JSCalculator('gesture', 'smote'):0.7280392737376549
+KSCalculator('gesture', 'smote'):0.7907089934322213

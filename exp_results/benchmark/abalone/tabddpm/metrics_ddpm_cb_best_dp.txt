@@ -1,0 +1,8 @@
+DCRCalculator('abalone', 'ddpm_cb_best'):0.3641368534765945
+NNDRCalculator('abalone', 'ddpm_cb_best'):0.6861530917634393
+AdversarialAccuracyCalculator('abalone', 'ddpm_cb_best'):0.7989999999999999
+AdversarialAccuracyCalculator_NN('abalone', 'ddpm_cb_best'):0.7989999999999999
+BasicStatsCalculator('abalone', 'ddpm_cb_best'):{'mean': 0.1416024971271247, 'median': 0.0807866985049983, 'var': 0.13402607936163882}
+MICalculator('abalone', 'ddpm_cb_best'):0.920204881313863
+JSCalculator('abalone', 'ddpm_cb_best'):0.6100872625989465
+KSCalculator('abalone', 'ddpm_cb_best'):0.7080909090909091

@@ -1,0 +1,8 @@
+DCRCalculator('insurance', 'smote'):0.04962536368173557
+NNDRCalculator('insurance', 'smote'):0.46882241600347324
+AdversarialAccuracyCalculator('insurance', 'smote'):0.3428738317757009
+AdversarialAccuracyCalculator_NN('insurance', 'smote'):0.3428738317757009
+BasicStatsCalculator('insurance', 'smote'):{'mean': 0.008442194201622817, 'median': 0.0006210456471523648, 'var': 0.003986366337365487}
+MICalculator('insurance', 'smote'):0.9812392201877375
+JSCalculator('insurance', 'smote'):0.9718776154430637
+KSCalculator('insurance', 'smote'):0.9821845794392523

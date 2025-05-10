@@ -1,0 +1,8 @@
+DCRCalculator('fb-comments', 'ddpm_cb_best'):26.07476722251916
+NNDRCalculator('fb-comments', 'ddpm_cb_best'):0.7694221713732567
+AdversarialAccuracyCalculator('fb-comments', 'ddpm_cb_best'):0.552
+AdversarialAccuracyCalculator_NN('fb-comments', 'ddpm_cb_best'):0.552
+BasicStatsCalculator('fb-comments', 'ddpm_cb_best'):{'mean': 0.37133389262215566, 'median': 0.0020511534726709185, 'var': 39.59736846547377}
+MICalculator('fb-comments', 'ddpm_cb_best'):0.9900634482121102
+JSCalculator('fb-comments', 'ddpm_cb_best'):0.9258366996411932
+KSCalculator('fb-comments', 'ddpm_cb_best'):0.9606074074074076

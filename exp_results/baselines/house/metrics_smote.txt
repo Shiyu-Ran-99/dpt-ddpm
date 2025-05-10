@@ -1,0 +1,8 @@
+DCRCalculator('house', 'smote'):0.0626551803473549
+NNDRCalculator('house', 'smote'):0.8177823779037987
+AdversarialAccuracyCalculator('house', 'smote'):0.626651696719826
+AdversarialAccuracyCalculator_NN('house', 'smote'):0.626651696719826
+BasicStatsCalculator('house', 'smote'):{'mean': 0.01749090840512219, 'median': 0.018992601442664958, 'var': 0.004861382863062158}
+MICalculator('house', 'smote'):0.9613936738116934
+JSCalculator('house', 'smote'):0.8333333091815011
+KSCalculator('house', 'smote'):0.8507091246021786

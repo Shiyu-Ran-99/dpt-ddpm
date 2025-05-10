@@ -1,0 +1,93 @@
+{
+    "eval_type": "synthetic",
+    "dataset": "data/diabetes/",
+    "metrics": {
+        "train": {
+            "0": {
+                "precision": 0.652,
+                "recall": 1.0,
+                "f1-score": 0.7893462469733655,
+                "support": 326
+            },
+            "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 174
+            },
+            "accuracy": 0.652,
+            "macro avg": {
+                "precision": 0.326,
+                "recall": 0.5,
+                "f1-score": 0.39467312348668276,
+                "support": 500
+            },
+            "weighted avg": {
+                "precision": 0.42510400000000004,
+                "recall": 0.652,
+                "f1-score": 0.5146537530266344,
+                "support": 500
+            },
+            "roc_auc": 0.5715570129045906,
+            "score": 0.652
+        },
+        "val": {
+            "0": {
+                "precision": 0.6504065040650406,
+                "recall": 1.0,
+                "f1-score": 0.7881773399014779,
+                "support": 80
+            },
+            "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 43
+            },
+            "accuracy": 0.6504065040650406,
+            "macro avg": {
+                "precision": 0.3252032520325203,
+                "recall": 0.5,
+                "f1-score": 0.39408866995073893,
+                "support": 123
+            },
+            "weighted avg": {
+                "precision": 0.42302862053010776,
+                "recall": 0.6504065040650406,
+                "f1-score": 0.5126356682286035,
+                "support": 123
+            },
+            "roc_auc": 0.2668604651162791,
+            "score": 0.6504065040650406
+        },
+        "test": {
+            "0": {
+                "precision": 0.6493506493506493,
+                "recall": 1.0,
+                "f1-score": 0.7874015748031497,
+                "support": 100
+            },
+            "1": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 54
+            },
+            "accuracy": 0.6493506493506493,
+            "macro avg": {
+                "precision": 0.3246753246753247,
+                "recall": 0.5,
+                "f1-score": 0.3937007874015748,
+                "support": 154
+            },
+            "weighted avg": {
+                "precision": 0.4216562658121099,
+                "recall": 0.6493506493506493,
+                "f1-score": 0.5112997238981491,
+                "support": 154
+            },
+            "roc_auc": 0.3022222222222223,
+            "score": 0.6493506493506493
+        }
+    }
+}

@@ -1,0 +1,67 @@
+# eps=30.0
+DCRCalculator('abalone', 'ddpm_cb_best'):0.08608630863890503
+NNDRCalculator('abalone', 'ddpm_cb_best'):0.8424764489422375
+AdversarialAccuracyCalculator('abalone', 'ddpm_cb_best'):0.5645
+AdversarialAccuracyCalculator_NN('abalone', 'ddpm_cb_best'):0.5645
+BasicStatsCalculator('abalone', 'ddpm_cb_best'):{'mean': 0.02451274905616291, 'median': 0.01562134351259815, 'var': 0.009147737203584076}
+MICalculator('abalone', 'ddpm_cb_best'):0.9407398011941409
+CorrelationCalculator('abalone', 'ddpm_cb_best'):0.9867666140063536
+JSCalculator('abalone', 'ddpm_cb_best'):0.8952420218253093
+KSCalculator('abalone', 'ddpm_cb_best'):0.9352727272727273
+WassersteinCalculator('abalone', 'ddpm_cb_best'):0.1778208070461978
+
+DCRCalculator('buddy', 'ddpm_cb_best'):1.0355366044591587
+NNDRCalculator('buddy', 'ddpm_cb_best'):0.853838821583851
+AdversarialAccuracyCalculator('buddy', 'ddpm_cb_best'):0.644
+AdversarialAccuracyCalculator_NN('buddy', 'ddpm_cb_best'):0.644
+BasicStatsCalculator('buddy', 'ddpm_cb_best'):{'mean': 0.016421712260372843, 'median': 0.0019100066734312616, 'var': 0.012651550461598467}
+MICalculator('buddy', 'ddpm_cb_best'):0.9963826270968056
+CorrelationCalculator('buddy', 'ddpm_cb_best'):nan
+JSCalculator('buddy', 'ddpm_cb_best'):0.9655708058545156
+KSCalculator('buddy', 'ddpm_cb_best'):0.979676056338028
+WassersteinCalculator('buddy', 'ddpm_cb_best'):1.194164327222124
+
+DCRCalculator('california', 'ddpm_cb_best'):7.939177125517022
+NNDRCalculator('california', 'ddpm_cb_best'):0.8777939673369515
+AdversarialAccuracyCalculator('california', 'ddpm_cb_best'):0.6045
+AdversarialAccuracyCalculator_NN('california', 'ddpm_cb_best'):0.6045
+BasicStatsCalculator('california', 'ddpm_cb_best'):{'mean': 0.9391814631460649, 'median': 0.04034034506642836, 'var': 35.973340504022694}
+MICalculator('california', 'ddpm_cb_best'):0.9764466900660714
+CorrelationCalculator('california', 'ddpm_cb_best'):0.8625830809008839
+JSCalculator('california', 'ddpm_cb_best'):0.7360908257856207
+KSCalculator('california', 'ddpm_cb_best'):0.8038888888888889
+WassersteinCalculator('california', 'ddpm_cb_best'):8.104972808560593
+
+DCRCalculator('diabetes', 'ddpm_cb_best'): 0.4273135039431358
+NNDRCalculator('diabetes', 'ddpm_cb_best'): 0.874936618220383
+AdversarialAccuracyCalculator('diabetes', 'ddpm_cb_best'): 0.683
+AdversarialAccuracyCalculator_NN('diabetes', 'ddpm_cb_best'): 0.683
+BasicStatsCalculator('diabetes', 'ddpm_cb_best'): {'mean': 0.09773521548646662, 'median': 0.056058788837472555, 'var': 0.045313631945707554}
+MICalculator('diabetes', 'ddpm_cb_best'): 0.9136199553340697
+CorrelationCalculator('diabetes', 'ddpm_cb_best'): 0.8883006334328433
+JSCalculator('diabetes', 'ddpm_cb_best'): 0.7304980181536559
+KSCalculator('diabetes', 'ddpm_cb_best'): 0.7557777777777778
+WassersteinCalculator('diabetes', 'ddpm_cb_best'): 0.5782367413360955
+
+DCRCalculator('insurance', 'ddpm_cb_best'):0.12907354399298548
+NNDRCalculator('insurance', 'ddpm_cb_best'):0.657925865265475
+AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.5475
+AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.5475
+BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.03297624492038447, 'median': 0.17131628823977252, 'var': 0.018316094528749407}
+MICalculator('insurance', 'ddpm_cb_best'):0.9797859523028496
+CorrelationCalculator('insurance', 'ddpm_cb_best'):0.9601823375618272
+JSCalculator('insurance', 'ddpm_cb_best'):0.9340639023907805
+KSCalculator('insurance', 'ddpm_cb_best'):0.9500833333333333
+WassersteinCalculator('insurance', 'ddpm_cb_best'):0.3582169046605904
+
+DCRCalculator('wilt', 'ddpm_cb_best'):0.047095523243566646
+NNDRCalculator('wilt', 'ddpm_cb_best'):0.8011274966737371
+AdversarialAccuracyCalculator('wilt', 'ddpm_cb_best'):0.5075000000000001
+AdversarialAccuracyCalculator_NN('wilt', 'ddpm_cb_best'):0.5075000000000001
+BasicStatsCalculator('wilt', 'ddpm_cb_best'):{'mean': 0.0031303479517031142, 'median': 0.0027484119625271544, 'var': 0.01260765769499181}
+MICalculator('wilt', 'ddpm_cb_best'):0.9980262496427462
+CorrelationCalculator('wilt', 'ddpm_cb_best'):0.9171979451971555
+JSCalculator('wilt', 'ddpm_cb_best'):0.8975403967311775
+KSCalculator('wilt', 'ddpm_cb_best'):0.9486666666666667
+WassersteinCalculator('wilt', 'ddpm_cb_best'):0.07381032522730994
+

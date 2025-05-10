@@ -1,0 +1,108 @@
+# eps=0.3
+DCRCalculator('king', 'ddpm_cb_best'):4.381096666020124
+NNDRCalculator('king', 'ddpm_cb_best'):0.9845151932827275
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.9984999999999999
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.9984999999999999
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.3970839124783604, 'median': 0.424792419348377, 'var': 0.3677853567084833}
+MICalculator('king', 'ddpm_cb_best'):0.9132377140948237
+CorrelationCalculator('king', 'ddpm_cb_best'):nan
+JSCalculator('king', 'ddpm_cb_best'):0.5028348722229772
+KSCalculator('king', 'ddpm_cb_best'):0.49890000000000007
+WassersteinCalculator('king', 'ddpm_cb_best'):4.94400229152225
+
+# eps=10.0
+DCRCalculator('king', 'ddpm_cb_best'):3.1949261475157082
+NNDRCalculator('king', 'ddpm_cb_best'):0.9592587534464122
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.9119999999999999
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.9119999999999999
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.23607183830158016, 'median': 0.2684807530846422, 'var': 0.3892711457290236}
+MICalculator('king', 'ddpm_cb_best'):0.9680759264677918
+CorrelationCalculator('king', 'ddpm_cb_best'):0.9354096912715828
+JSCalculator('king', 'ddpm_cb_best'):0.6326082879861902
+KSCalculator('king', 'ddpm_cb_best'):0.6807666666666667
+WassersteinCalculator('king', 'ddpm_cb_best'):3.607246804017966
+
+# eps=50.0
+DCRCalculator('king', 'ddpm_cb_best'):1.5505403345180266
+NNDRCalculator('king', 'ddpm_cb_best'):0.9113946816462881
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.6839999999999999
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.6839999999999999
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.09929296413335195, 'median': 0.04217050841061039, 'var': 0.2024853156995364}
+MICalculator('king', 'ddpm_cb_best'):0.9771117079562623
+CorrelationCalculator('king', 'ddpm_cb_best'):0.9474514638254624
+JSCalculator('king', 'ddpm_cb_best'):0.799396969256381
+KSCalculator('king', 'ddpm_cb_best'):0.8633333333333335
+WassersteinCalculator('king', 'ddpm_cb_best'):1.7583201171633864
+
+# eps=0.5
+DCRCalculator('king', 'ddpm_cb_best'):4.583822556812158
+NNDRCalculator('king', 'ddpm_cb_best'):0.9825965004624757
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.995
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.995
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.4144186819738099, 'median': 0.43413585369181135, 'var': 0.4587414438222035}
+MICalculator('king', 'ddpm_cb_best'):0.918161506159204
+CorrelationCalculator('king', 'ddpm_cb_best'):nan
+JSCalculator('king', 'ddpm_cb_best'):0.5056434040276556
+KSCalculator('king', 'ddpm_cb_best'):0.5246333333333334
+WassersteinCalculator('king', 'ddpm_cb_best'):5.131700404824908
+
+# eps=30.0
+DCRCalculator('king', 'ddpm_cb_best'):2.0813026282375873
+NNDRCalculator('king', 'ddpm_cb_best'):0.9258984937975727
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.7525
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.7525
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.1575819949257368, 'median': 0.049072723398238524, 'var': 0.282989196472199}
+MICalculator('king', 'ddpm_cb_best'):0.9750530778092351
+CorrelationCalculator('king', 'ddpm_cb_best'):0.9449936808283103
+JSCalculator('king', 'ddpm_cb_best'):0.7489719122050597
+KSCalculator('king', 'ddpm_cb_best'):0.8131333333333333
+WassersteinCalculator('king', 'ddpm_cb_best'):2.363343033854159
+
+# eps=70.0
+DCRCalculator('king', 'ddpm_cb_best'):1.330024274557069
+NNDRCalculator('king', 'ddpm_cb_best'):0.9081792296077759
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.669
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.669
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.07213821037161129, 'median': 0.027574052071388196, 'var': 0.160594926671174}
+MICalculator('king', 'ddpm_cb_best'):0.9770106181544802
+CorrelationCalculator('king', 'ddpm_cb_best'):0.9402160399746851
+JSCalculator('king', 'ddpm_cb_best'):0.8090296670729138
+KSCalculator('king', 'ddpm_cb_best'):0.8647666666666667
+WassersteinCalculator('king', 'ddpm_cb_best'):1.5030839524139417
+
+# eps=100.0
+DCRCalculator('king', 'ddpm_cb_best'):1.2840281205011406
+NNDRCalculator('king', 'ddpm_cb_best'):0.9034943185091218
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.6479999999999999
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.6479999999999999
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.07245534741080259, 'median': 0.03666942850058704, 'var': 0.15658521367817663}
+MICalculator('king', 'ddpm_cb_best'):0.9767250212233158
+CorrelationCalculator('king', 'ddpm_cb_best'):0.940226527989472
+JSCalculator('king', 'ddpm_cb_best'):0.8197261237083561
+KSCalculator('king', 'ddpm_cb_best'):0.8761333333333333
+WassersteinCalculator('king', 'ddpm_cb_best'):1.4523791471294851
+
+# eps=1.0
+DCRCalculator('king', 'ddpm_cb_best'):4.679115092262864
+NNDRCalculator('king', 'ddpm_cb_best'):0.9793242636035998
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.995
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.995
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.4133221648724959, 'median': 0.4304383034858125, 'var': 0.5412337838616728}
+MICalculator('king', 'ddpm_cb_best'):0.9248130436121538
+CorrelationCalculator('king', 'ddpm_cb_best'):nan
+JSCalculator('king', 'ddpm_cb_best'):0.5183918220969093
+KSCalculator('king', 'ddpm_cb_best'):0.5661333333333334
+WassersteinCalculator('king', 'ddpm_cb_best'):5.2155512220625
+
+# eps=1000.0
+DCRCalculator('king', 'ddpm_cb_best'):1.504297660803301
+NNDRCalculator('king', 'ddpm_cb_best'):0.8909729294139578
+AdversarialAccuracyCalculator('king', 'ddpm_cb_best'):0.732
+AdversarialAccuracyCalculator_NN('king', 'ddpm_cb_best'):0.732
+BasicStatsCalculator('king', 'ddpm_cb_best'):{'mean': 0.1275182204975097, 'median': 0.07953511568326138, 'var': 0.18307251934295704}
+MICalculator('king', 'ddpm_cb_best'):0.9685671785019055
+CorrelationCalculator('king', 'ddpm_cb_best'):0.9317356894957122
+JSCalculator('king', 'ddpm_cb_best'):0.7935483116136177
+KSCalculator('king', 'ddpm_cb_best'):0.8346333333333333
+WassersteinCalculator('king', 'ddpm_cb_best'):1.8320084715888192
+

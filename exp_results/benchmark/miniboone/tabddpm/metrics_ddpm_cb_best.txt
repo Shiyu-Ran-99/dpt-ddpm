@@ -1,0 +1,8 @@
+DCRCalculator('miniboone', 'ddpm_cb_best'):0.0887066651945502
+NNDRCalculator('miniboone', 'ddpm_cb_best'):0.8655450401443442
+AdversarialAccuracyCalculator('miniboone', 'ddpm_cb_best'):0.504
+AdversarialAccuracyCalculator_NN('miniboone', 'ddpm_cb_best'):0.504
+BasicStatsCalculator('miniboone', 'ddpm_cb_best'):{'mean': 0.0018856590057022146, 'median': 0.00032569444815328517, 'var': 0.004150749037974321}
+MICalculator('miniboone', 'ddpm_cb_best'):0.9983910484949158
+JSCalculator('miniboone', 'ddpm_cb_best'):0.9014880751447482
+KSCalculator('miniboone', 'ddpm_cb_best'):0.9604705882352943

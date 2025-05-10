@@ -1,0 +1,16 @@
+DCRCalculator('Diabetes', 'DDPM-CB-BEST'):0.046139305677802396
+NNDRCalculator('Diabetes', 'DDPM-CB-BEST'):0.7970315695631035
+AdversarialAccuracyCalculator('Diabetes', 'DDPM-CB-BEST'):0.5213840693692259
+AdversarialAccuracyCalculator_NN('Diabetes', 'DDPM-CB-BEST'):0.5213840693692259
+BasicStatsCalculator('Diabetes', 'DDPM-CB-BEST'):{'mean': 0.012016973005594112, 'median': 0.015144230008169012, 'var': 0.001410000987679147}
+MICalculator('Diabetes', 'DDPM-CB-BEST'):0.9094095657976574
+JSCalculator('Diabetes', 'DDPM-CB-BEST'):0.9420362946890405
+KSCalculator('Diabetes', 'DDPM-CB-BEST'):0.9685834912923437
+DCRCalculator('buddy', 'ctabgan-plus'):0.2248202555519634
+NNDRCalculator('buddy', 'ctabgan-plus'):0.7676704955652955
+AdversarialAccuracyCalculator('buddy', 'ctabgan-plus'):0.5324802384653096
+AdversarialAccuracyCalculator_NN('buddy', 'ctabgan-plus'):0.5324802384653096
+BasicStatsCalculator('buddy', 'ctabgan-plus'):{'mean': 0.004649443587555603, 'median': 0.0007672975892176006, 'var': 0.002516167543678243}
+MICalculator('buddy', 'ctabgan-plus'):0.9981430682845261
+JSCalculator('buddy', 'ctabgan-plus'):0.9885608865350485
+KSCalculator('buddy', 'ctabgan-plus'):0.9943034979687885

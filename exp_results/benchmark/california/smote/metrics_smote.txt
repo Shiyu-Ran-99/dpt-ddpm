@@ -1,0 +1,8 @@
+DCRCalculator('california', 'smote'):0.13110942593826985
+NNDRCalculator('california', 'smote'):0.7860121021217278
+AdversarialAccuracyCalculator('california', 'smote'):0.6605
+AdversarialAccuracyCalculator_NN('california', 'smote'):0.6605
+BasicStatsCalculator('california', 'smote'):{'mean': 0.043734554765807315, 'median': 0.03552351309622606, 'var': 0.12840088568566055}
+MICalculator('california', 'smote'):0.949043108763494
+JSCalculator('california', 'smote'):0.8125447912755409
+KSCalculator('california', 'smote'):0.8376666666666668

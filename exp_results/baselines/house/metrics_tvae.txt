@@ -1,0 +1,8 @@
+DCRCalculator('house', 'tvae'):0.11756539967149657
+NNDRCalculator('house', 'tvae'):0.9162578800262511
+AdversarialAccuracyCalculator('house', 'tvae'):0.6580368421267564
+AdversarialAccuracyCalculator_NN('house', 'tvae'):0.6580368421267564
+BasicStatsCalculator('house', 'tvae'):{'mean': 0.004356570295375662, 'median': 0.003317511615404225, 'var': 0.0024329475067528168}
+MICalculator('house', 'tvae'):0.895520728421457
+JSCalculator('house', 'tvae'):0.8371988224142138
+KSCalculator('house', 'tvae'):0.9090501876720242

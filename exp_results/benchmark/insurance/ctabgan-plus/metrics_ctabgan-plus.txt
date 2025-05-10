@@ -1,0 +1,8 @@
+DCRCalculator('insurance', 'ctabgan-plus'):0.11639042287075442
+NNDRCalculator('insurance', 'ctabgan-plus'):0.7134718706070575
+AdversarialAccuracyCalculator('insurance', 'ctabgan-plus'):0.5115000000000001
+AdversarialAccuracyCalculator_NN('insurance', 'ctabgan-plus'):0.5115000000000001
+BasicStatsCalculator('insurance', 'ctabgan-plus'):{'mean': 0.022003333031092986, 'median': 0.16741909272561847, 'var': 0.008190396440891213}
+MICalculator('insurance', 'ctabgan-plus'):0.9935630614483855
+JSCalculator('insurance', 'ctabgan-plus'):0.9538334658150108
+KSCalculator('insurance', 'ctabgan-plus'):0.9610833333333334

@@ -1,0 +1,8 @@
+DCRCalculator('wilt', 'tvae'):0.015901763521955426
+NNDRCalculator('wilt', 'tvae'):0.8183164839991897
+AdversarialAccuracyCalculator('wilt', 'tvae'):0.6743464772278953
+AdversarialAccuracyCalculator_NN('wilt', 'tvae'):0.6743464772278953
+BasicStatsCalculator('wilt', 'tvae'):{'mean': 0.011862279542404036, 'median': 0.009150720315439597, 'var': 0.006279997865744437}
+MICalculator('wilt', 'tvae'):0.9931787594831893
+JSCalculator('wilt', 'tvae'):0.8621304146496461
+KSCalculator('wilt', 'tvae'):0.9190242474340429

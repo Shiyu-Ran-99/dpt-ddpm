@@ -1,0 +1,8 @@
+DCRCalculator('churn2', 'ddpm_cb_best'):0.3248285026636852
+NNDRCalculator('churn2', 'ddpm_cb_best'):0.7739272865344972
+AdversarialAccuracyCalculator('churn2', 'ddpm_cb_best'):0.47750000000000004
+AdversarialAccuracyCalculator_NN('churn2', 'ddpm_cb_best'):0.47750000000000004
+BasicStatsCalculator('churn2', 'ddpm_cb_best'):{'mean': 0.01782387496027469, 'median': 0.02333572474485558, 'var': 0.006692444451785203}
+MICalculator('churn2', 'ddpm_cb_best'):0.9887343494967976
+JSCalculator('churn2', 'ddpm_cb_best'):0.9609535450832851
+KSCalculator('churn2', 'ddpm_cb_best'):0.9694705882352942

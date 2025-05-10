@@ -1,0 +1,8 @@
+DCRCalculator('miniboone', 'smote'):0.028313899683242043
+NNDRCalculator('miniboone', 'smote'):0.8273336395263995
+AdversarialAccuracyCalculator('miniboone', 'smote'):0.5792841431713657
+AdversarialAccuracyCalculator_NN('miniboone', 'smote'):0.5792841431713657
+BasicStatsCalculator('miniboone', 'smote'):{'mean': 0.007523776146834626, 'median': 0.0008437002296946887, 'var': 0.004958883666242138}
+MICalculator('miniboone', 'smote'):0.9915313754031357
+JSCalculator('miniboone', 'smote'):0.8693146465363158
+KSCalculator('miniboone', 'smote'):0.8934801275039108

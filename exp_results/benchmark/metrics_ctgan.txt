@@ -1,0 +1,154 @@
+DCRCalculator('wilt', 'ctgan'):0.07978660540399747
+NNDRCalculator('wilt', 'ctgan'):0.8514024989646568
+AdversarialAccuracyCalculator('wilt', 'ctgan'):0.7415
+AdversarialAccuracyCalculator_NN('wilt', 'ctgan'):0.7415
+BasicStatsCalculator('wilt', 'ctgan'):{'mean': 0.06498650732547283, 'median': 0.01335027787375513, 'var': 0.03471164693562539}
+MICalculator('wilt', 'ctgan'):0.9814070425853418
+CorrelationCalculator('wilt', 'ctgan'):0.9386638969038054
+JSCalculator('wilt', 'ctgan'):0.8206540540205761
+KSCalculator('wilt', 'ctgan'):0.8556666666666666
+WassersteinCalculator('wilt', 'ctgan'):0.39061866547435986
+
+DCRCalculator('abalone', 'ctgan'):0.18767364741577194
+NNDRCalculator('abalone', 'ctgan'):0.9303618216948012
+AdversarialAccuracyCalculator('abalone', 'ctgan'):0.8235
+AdversarialAccuracyCalculator_NN('abalone', 'ctgan'):0.8235
+BasicStatsCalculator('abalone', 'ctgan'):{'mean': 0.016985419777499292, 'median': 0.009174027285383208, 'var': 0.011036387055328696}
+MICalculator('abalone', 'ctgan'):0.9279448318325055
+CorrelationCalculator('abalone', 'ctgan'):0.9570920505764106
+JSCalculator('abalone', 'ctgan'):0.9069730850721769
+KSCalculator('abalone', 'ctgan'):0.9392727272727271
+WassersteinCalculator('abalone', 'ctgan'):0.2591974076653581
+
+DCRCalculator('adult', 'ctgan'):1.3203362942445864
+NNDRCalculator('adult', 'ctgan'):0.8268851456274111
+AdversarialAccuracyCalculator('adult', 'ctgan'):0.5885
+AdversarialAccuracyCalculator_NN('adult', 'ctgan'):0.5885
+BasicStatsCalculator('adult', 'ctgan'):{'mean': 0.017461363522126246, 'median': 0.0005902087709873006, 'var': 0.011328022335501219}
+MICalculator('adult', 'ctgan'):0.9944139054873403
+CorrelationCalculator('adult', 'ctgan'):nan
+JSCalculator('adult', 'ctgan'):0.9627476505729217
+KSCalculator('adult', 'ctgan'):0.9601578947368419
+WassersteinCalculator('adult', 'ctgan'):1.5148109679566866
+
+DCRCalculator('buddy', 'ctgan'):0.9146973535973705
+NNDRCalculator('buddy', 'ctgan'):0.8262363368361588
+AdversarialAccuracyCalculator('buddy', 'ctgan'):0.613
+AdversarialAccuracyCalculator_NN('buddy', 'ctgan'):0.613
+BasicStatsCalculator('buddy', 'ctgan'):{'mean': 0.021065284704994046, 'median': 0.02909771044915466, 'var': 0.012286820395333792}
+MICalculator('buddy', 'ctgan'):0.9958974919674197
+CorrelationCalculator('buddy', 'ctgan'):nan
+JSCalculator('buddy', 'ctgan'):0.9624734047565657
+KSCalculator('buddy', 'ctgan'):0.9756338028169014
+WassersteinCalculator('buddy', 'ctgan'):1.1940858895528448
+
+DCRCalculator('california', 'ctgan'):0.13331637563013513
+NNDRCalculator('california', 'ctgan'):0.8720811973830073
+AdversarialAccuracyCalculator('california', 'ctgan'):0.64
+AdversarialAccuracyCalculator_NN('california', 'ctgan'):0.64
+BasicStatsCalculator('california', 'ctgan'):{'mean': 0.00791201445502114, 'median': 0.012025570135348725, 'var': 0.002081843547346448}
+MICalculator('california', 'ctgan'):0.9442146585174679
+CorrelationCalculator('california', 'ctgan'):0.9538970085203576
+JSCalculator('california', 'ctgan'):0.8760231317595806
+KSCalculator('california', 'ctgan'):0.9281111111111111
+WassersteinCalculator('california', 'ctgan'):0.16835895862539743
+
+DCRCalculator('cardio', 'ctgan'):0.395507366628615
+NNDRCalculator('cardio', 'ctgan'):0.7408472285117094
+AdversarialAccuracyCalculator('cardio', 'ctgan'):0.6365000000000001
+AdversarialAccuracyCalculator_NN('cardio', 'ctgan'):0.6365000000000001
+BasicStatsCalculator('cardio', 'ctgan'):{'mean': 0.06315704489094075, 'median': 0.004998956304463222, 'var': 0.034862352944868294}
+MICalculator('cardio', 'ctgan'):0.9580309276536522
+CorrelationCalculator('cardio', 'ctgan'):0.9622438190514921
+JSCalculator('cardio', 'ctgan'):0.8644924367033753
+KSCalculator('cardio', 'ctgan'):0.8904
+WassersteinCalculator('cardio', 'ctgan'):0.7696293610015849
+
+DCRCalculator('churn2', 'ctgan'):0.39024245232202537
+NNDRCalculator('churn2', 'ctgan'):0.8131416906718532
+AdversarialAccuracyCalculator('churn2', 'ctgan'):0.5549999999999999
+AdversarialAccuracyCalculator_NN('churn2', 'ctgan'):0.5549999999999999
+BasicStatsCalculator('churn2', 'ctgan'):{'mean': 0.032649866301752095, 'median': 0.14309839786412312, 'var': 0.009682631542559491}
+MICalculator('churn2', 'ctgan'):0.9411598752698687
+CorrelationCalculator('churn2', 'ctgan'):0.9699098264751767
+JSCalculator('churn2', 'ctgan'):0.9286337967220835
+KSCalculator('churn2', 'ctgan'):0.9088823529411764
+WassersteinCalculator('churn2', 'ctgan'):0.6262403414361157
+
+DCRCalculator('diabetes', 'ctgan'):0.2653118099452911
+NNDRCalculator('diabetes', 'ctgan'):0.8844805547348004
+AdversarialAccuracyCalculator('diabetes', 'ctgan'):0.753
+AdversarialAccuracyCalculator_NN('diabetes', 'ctgan'):0.753
+BasicStatsCalculator('diabetes', 'ctgan'):{'mean': 0.04830966649524132, 'median': 0.035229925701997865, 'var': 0.009302811579124463}
+MICalculator('diabetes', 'ctgan'):0.8126475485376802
+CorrelationCalculator('diabetes', 'ctgan'):0.9289420789187726
+JSCalculator('diabetes', 'ctgan'):0.7787752655069657
+KSCalculator('diabetes', 'ctgan'):0.808
+WassersteinCalculator('diabetes', 'ctgan'):0.38898979478705914
+
+DCRCalculator('gesture', 'ctgan'):0.2863976024454765
+NNDRCalculator('gesture', 'ctgan'):0.9620055948298135
+AdversarialAccuracyCalculator('gesture', 'ctgan'):0.8705
+AdversarialAccuracyCalculator_NN('gesture', 'ctgan'):0.8705
+BasicStatsCalculator('gesture', 'ctgan'):{'mean': 0.012400668281094594, 'median': 0.011526640883355614, 'var': 0.002153437428838494}
+MICalculator('gesture', 'ctgan'):0.9992145281663327
+CorrelationCalculator('gesture', 'ctgan'):0.954121337418995
+JSCalculator('gesture', 'ctgan'):0.6791936055931685
+KSCalculator('gesture', 'ctgan'):0.7465151515151516
+WassersteinCalculator('gesture', 'ctgan'):0.3382468607147312
+
+DCRCalculator('higgs-small', 'ctgan'):0.866512389133516
+NNDRCalculator('higgs-small', 'ctgan'):0.9232774557054875
+AdversarialAccuracyCalculator('higgs-small', 'ctgan'):0.615
+AdversarialAccuracyCalculator_NN('higgs-small', 'ctgan'):0.615
+BasicStatsCalculator('higgs-small', 'ctgan'):{'mean': 0.019686998865083814, 'median': 0.08615478342076463, 'var': 0.0037403620840259326}
+MICalculator('higgs-small', 'ctgan'):0.8992080334812644
+CorrelationCalculator('higgs-small', 'ctgan'):0.9698946652006084
+JSCalculator('higgs-small', 'ctgan'):0.8824130034250275
+KSCalculator('higgs-small', 'ctgan'):0.8820689655172413
+WassersteinCalculator('higgs-small', 'ctgan'):0.9510701297989581
+
+DCRCalculator('house', 'ctgan'):0.25262665993054173
+NNDRCalculator('house', 'ctgan'):0.9112750000832566
+AdversarialAccuracyCalculator('house', 'ctgan'):0.6985
+AdversarialAccuracyCalculator_NN('house', 'ctgan'):0.6985
+BasicStatsCalculator('house', 'ctgan'):{'mean': 0.010479587176443999, 'median': 0.008288217848448421, 'var': 0.0024781527552164883}
+MICalculator('house', 'ctgan'):0.9313726219232978
+CorrelationCalculator('house', 'ctgan'):0.9616666072140349
+JSCalculator('house', 'ctgan'):0.8254115118566214
+KSCalculator('house', 'ctgan'):0.8619999999999999
+WassersteinCalculator('house', 'ctgan'):0.29546485338919964
+
+DCRCalculator('insurance', 'ctgan'):0.24582565074581808
+NNDRCalculator('insurance', 'ctgan'):0.8384403782229761
+AdversarialAccuracyCalculator('insurance', 'ctgan'):0.714
+AdversarialAccuracyCalculator_NN('insurance', 'ctgan'):0.714
+BasicStatsCalculator('insurance', 'ctgan'):{'mean': 0.07829098793984939, 'median': 0.023397768248331122, 'var': 0.031809931117340595}
+MICalculator('insurance', 'ctgan'):0.9544592709801406
+CorrelationCalculator('insurance', 'ctgan'):0.9603208399368864
+JSCalculator('insurance', 'ctgan'):0.8681780038289654
+KSCalculator('insurance', 'ctgan'):0.87575
+WassersteinCalculator('insurance', 'ctgan'):0.5994457754301814
+
+DCRCalculator('king', 'ctgan'):0.7130802306209388
+NNDRCalculator('king', 'ctgan'):0.8667137881434298
+AdversarialAccuracyCalculator('king', 'ctgan'):0.6775
+AdversarialAccuracyCalculator_NN('king', 'ctgan'):0.6775
+BasicStatsCalculator('king', 'ctgan'):{'mean': 0.06033862976133979, 'median': 0.06019755359239148, 'var': 0.033256413877668194}
+MICalculator('king', 'ctgan'):0.8891842979197685
+CorrelationCalculator('king', 'ctgan'):0.96318258047857
+JSCalculator('king', 'ctgan'):0.85479666001296
+KSCalculator('king', 'ctgan'):0.8453
+WassersteinCalculator('king', 'ctgan'):1.0730316853079904
+
+DCRCalculator('miniboone', 'ctgan'):0.09026485404075917
+NNDRCalculator('miniboone', 'ctgan'):0.9212874984969399
+AdversarialAccuracyCalculator('miniboone', 'ctgan'):0.7685
+AdversarialAccuracyCalculator_NN('miniboone', 'ctgan'):0.7685
+BasicStatsCalculator('miniboone', 'ctgan'):{'mean': 0.008102677534702715, 'median': 0.0018449560204651023, 'var': 0.0033035074289597967}
+MICalculator('miniboone', 'ctgan'):0.9874002415945088
+CorrelationCalculator('miniboone', 'ctgan'):0.6124721417314727
+JSCalculator('miniboone', 'ctgan'):0.7718361725607489
+KSCalculator('miniboone', 'ctgan'):0.8184705882352941
+WassersteinCalculator('miniboone', 'ctgan'):0.3197496451592276
+

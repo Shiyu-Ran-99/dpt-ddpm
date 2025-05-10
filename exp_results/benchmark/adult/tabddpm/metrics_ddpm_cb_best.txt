@@ -1,0 +1,8 @@
+DCRCalculator('adult', 'ddpm_cb_best'):0.9644639711644024
+NNDRCalculator('adult', 'ddpm_cb_best'):0.7471401524158768
+AdversarialAccuracyCalculator('adult', 'ddpm_cb_best'):0.507
+AdversarialAccuracyCalculator_NN('adult', 'ddpm_cb_best'):0.507
+BasicStatsCalculator('adult', 'ddpm_cb_best'):{'mean': 0.007265244591010562, 'median': 3.2822776220018856e-05, 'var': 0.005200024195120984}
+MICalculator('adult', 'ddpm_cb_best'):0.9828390326080418
+JSCalculator('adult', 'ddpm_cb_best'):0.9796698506126114
+KSCalculator('adult', 'ddpm_cb_best'):0.9916526315789471

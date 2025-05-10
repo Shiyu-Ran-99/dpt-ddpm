@@ -1,0 +1,8 @@
+DCRCalculator('churn2', 'ctabgan-plus'):0.3598119965982024
+NNDRCalculator('churn2', 'ctabgan-plus'):0.7984121595904872
+AdversarialAccuracyCalculator('churn2', 'ctabgan-plus'):0.4885
+AdversarialAccuracyCalculator_NN('churn2', 'ctabgan-plus'):0.4885
+BasicStatsCalculator('churn2', 'ctabgan-plus'):{'mean': 0.023909313045302787, 'median': 0.1254538177940543, 'var': 0.006117661879413065}
+MICalculator('churn2', 'ctabgan-plus'):0.9813359917262723
+JSCalculator('churn2', 'ctabgan-plus'):0.9560823958952043
+KSCalculator('churn2', 'ctabgan-plus'):0.9591176470588235

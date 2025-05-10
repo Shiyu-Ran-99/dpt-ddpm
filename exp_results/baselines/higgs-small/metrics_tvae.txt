@@ -1,0 +1,8 @@
+DCRCalculator('higgs-small', 'tvae'):0.4873991771579736
+NNDRCalculator('higgs-small', 'tvae'):0.9235024291887989
+AdversarialAccuracyCalculator('higgs-small', 'tvae'):0.9350652949792977
+AdversarialAccuracyCalculator_NN('higgs-small', 'tvae'):0.9350652949792977
+BasicStatsCalculator('higgs-small', 'tvae'):{'mean': 0.07029621785599069, 'median': 0.10911974939495829, 'var': 0.014703239074808567}
+MICalculator('higgs-small', 'tvae'):0.8485010242544586
+JSCalculator('higgs-small', 'tvae'):0.7736975999473955
+KSCalculator('higgs-small', 'tvae'):0.7659436905479078

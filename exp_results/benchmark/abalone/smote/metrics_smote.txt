@@ -1,0 +1,8 @@
+DCRCalculator('abalone', 'smote'):0.03728741343106638
+NNDRCalculator('abalone', 'smote'):0.6546571868662063
+AdversarialAccuracyCalculator('abalone', 'smote'):0.623
+AdversarialAccuracyCalculator_NN('abalone', 'smote'):0.623
+BasicStatsCalculator('abalone', 'smote'):{'mean': 0.10551005123561326, 'median': 0.1579343292096386, 'var': 0.018233054949674088}
+MICalculator('abalone', 'smote'):0.9335000401874822
+JSCalculator('abalone', 'smote'):0.7834539680157843
+KSCalculator('abalone', 'smote'):0.7507272727272727

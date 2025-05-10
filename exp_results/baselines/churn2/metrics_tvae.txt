@@ -1,0 +1,8 @@
+DCRCalculator('churn2', 'tvae'):0.21270266031393525
+NNDRCalculator('churn2', 'tvae'):0.8223940433548199
+AdversarialAccuracyCalculator('churn2', 'tvae'):0.5954193880611939
+AdversarialAccuracyCalculator_NN('churn2', 'tvae'):0.5954193880611939
+BasicStatsCalculator('churn2', 'tvae'):{'mean': 0.03127593554804268, 'median': 0.07052733808926301, 'var': 0.010529919867703566}
+MICalculator('churn2', 'tvae'):0.9381660495297509
+JSCalculator('churn2', 'tvae'):0.9205851240317595
+KSCalculator('churn2', 'tvae'):0.9157614097413788

@@ -1,0 +1,8 @@
+DCRCalculator('buddy', 'tvae'):0.4479472259806455
+NNDRCalculator('buddy', 'tvae'):0.7733263806557864
+AdversarialAccuracyCalculator('buddy', 'tvae'):0.6366152863411654
+AdversarialAccuracyCalculator_NN('buddy', 'tvae'):0.6366152863411654
+BasicStatsCalculator('buddy', 'tvae'):{'mean': 0.011906977472720508, 'median': 0.012894877821267352, 'var': 0.007476826738857123}
+MICalculator('buddy', 'tvae'):0.9841521038648731
+JSCalculator('buddy', 'tvae'):0.9736758596132213
+KSCalculator('buddy', 'tvae'):0.984506711844322

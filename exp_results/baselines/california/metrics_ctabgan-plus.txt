@@ -1,0 +1,8 @@
+DCRCalculator('california', 'ctabgan-plus'):0.0622062204868773
+NNDRCalculator('california', 'ctabgan-plus'):0.8716230588426621
+AdversarialAccuracyCalculator('california', 'ctabgan-plus'):0.8650464671240239
+AdversarialAccuracyCalculator_NN('california', 'ctabgan-plus'):0.8650464671240239
+BasicStatsCalculator('california', 'ctabgan-plus'):{'mean': 0.014469814039686332, 'median': 0.02019159128053486, 'var': 0.0012330860048478656}
+MICalculator('california', 'ctabgan-plus'):0.8583338663225623
+JSCalculator('california', 'ctabgan-plus'):0.8545937293674651
+KSCalculator('california', 'ctabgan-plus'):0.9338259272132627

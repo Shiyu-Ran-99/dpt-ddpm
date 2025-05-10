@@ -1,0 +1,8 @@
+DCRCalculator('gesture', 'ddpm_cb_best'):0.1235920328285231
+NNDRCalculator('gesture', 'ddpm_cb_best'):0.8762605847767272
+AdversarialAccuracyCalculator('gesture', 'ddpm_cb_best'):0.525
+AdversarialAccuracyCalculator_NN('gesture', 'ddpm_cb_best'):0.525
+BasicStatsCalculator('gesture', 'ddpm_cb_best'):{'mean': 0.008190693523400447, 'median': 0.003447841139860428, 'var': 0.003774211307618011}
+MICalculator('gesture', 'ddpm_cb_best'):0.9996081458066686
+JSCalculator('gesture', 'ddpm_cb_best'):0.8221795901949435
+KSCalculator('gesture', 'ddpm_cb_best'):0.9191212121212122

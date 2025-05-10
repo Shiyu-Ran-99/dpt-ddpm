@@ -1,0 +1,8 @@
+DCRCalculator('higgs-small', 'ddpm_cb_best'):0.7973843813130209
+NNDRCalculator('higgs-small', 'ddpm_cb_best'):0.90493586932688
+AdversarialAccuracyCalculator('higgs-small', 'ddpm_cb_best'):0.4975
+AdversarialAccuracyCalculator_NN('higgs-small', 'ddpm_cb_best'):0.4975
+BasicStatsCalculator('higgs-small', 'ddpm_cb_best'):{'mean': 0.006655388978205927, 'median': 0.04103288496814978, 'var': 0.0021182483029154315}
+MICalculator('higgs-small', 'ddpm_cb_best'):0.9949882730741064
+JSCalculator('higgs-small', 'ddpm_cb_best'):0.9220203708056761
+KSCalculator('higgs-small', 'ddpm_cb_best'):0.9623448275862068

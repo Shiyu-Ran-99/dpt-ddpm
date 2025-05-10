@@ -1,0 +1,8 @@
+DCRCalculator('cardio', 'tvae'):0.09151867073201794
+NNDRCalculator('cardio', 'tvae'):0.7765671584182438
+AdversarialAccuracyCalculator('cardio', 'tvae'):0.8385
+AdversarialAccuracyCalculator_NN('cardio', 'tvae'):0.8385
+BasicStatsCalculator('cardio', 'tvae'):{'mean': 0.058107943045037226, 'median': 0.0036452815471238937, 'var': 0.04212488320536466}
+MICalculator('cardio', 'tvae'):0.9547702280730289
+JSCalculator('cardio', 'tvae'):0.8377564740859439
+KSCalculator('cardio', 'tvae'):0.87335

@@ -1,0 +1,8 @@
+DCRCalculator('miniboone', 'ctabgan-plus'):129.43776488994268
+NNDRCalculator('miniboone', 'ctabgan-plus'):0.9999586163748785
+AdversarialAccuracyCalculator('miniboone', 'ctabgan-plus'):0.9996000799840032
+AdversarialAccuracyCalculator_NN('miniboone', 'ctabgan-plus'):0.9996000799840032
+BasicStatsCalculator('miniboone', 'ctabgan-plus'):{'mean': 2.545971800903877, 'median': 1.3540335160578587, 'var': 1153.7377090558723}
+MICalculator('miniboone', 'ctabgan-plus'):0.9857048044675839
+JSCalculator('miniboone', 'ctabgan-plus'):0.6144901121165292
+KSCalculator('miniboone', 'ctabgan-plus'):0.647223496477175

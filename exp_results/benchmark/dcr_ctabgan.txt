@@ -1,0 +1,12 @@
+
+{'dataset': 'adult', 'model': 'ctabgan', 'dcr_value': 0.2167127446683395}
+{'dataset': 'buddy', 'model': 'ctabgan', 'dcr_value': 0.23548426257986613}
+{'dataset': 'california', 'model': 'ctabgan', 'dcr_value': 0.06401302314694371}
+{'dataset': 'cardio', 'model': 'ctabgan', 'dcr_value': 0.014204675550759683}
+{'dataset': 'churn2', 'model': 'ctabgan', 'dcr_value': 0.23523357085216035}
+{'dataset': 'diabetes', 'model': 'ctabgan', 'dcr_value': 0.19120447559912546}
+{'dataset': 'gesture', 'model': 'ctabgan', 'dcr_value': 0.15523436398329132}
+{'dataset': 'higgs-small', 'model': 'ctabgan', 'dcr_value': 0.5382457117217456}
+{'dataset': 'house', 'model': 'ctabgan', 'dcr_value': 0.15430753073071873}
+{'dataset': 'miniboone', 'model': 'ctabgan', 'dcr_value': 0.02573696993693699}
+{'dataset': 'wilt', 'model': 'ctabgan', 'dcr_value': 0.019033275134460625}

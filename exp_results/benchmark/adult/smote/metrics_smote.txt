@@ -1,0 +1,8 @@
+DCRCalculator('adult', 'smote'):0.8073070041355279
+NNDRCalculator('adult', 'smote'):0.7017424724487102
+AdversarialAccuracyCalculator('adult', 'smote'):0.5885
+AdversarialAccuracyCalculator_NN('adult', 'smote'):0.5885
+BasicStatsCalculator('adult', 'smote'):{'mean': 0.021927922321655722, 'median': 0.0012497333539755228, 'var': 0.013286247291698118}
+MICalculator('adult', 'smote'):0.9545599977527758
+JSCalculator('adult', 'smote'):0.9582438432062151
+KSCalculator('adult', 'smote'):0.9747052631578945

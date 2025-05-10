@@ -1,0 +1,8 @@
+DCRCalculator('diabetes', 'tvae'):0.13876697741777294
+NNDRCalculator('diabetes', 'tvae'):0.8486069625699165
+AdversarialAccuracyCalculator('diabetes', 'tvae'):0.71623472718899
+AdversarialAccuracyCalculator_NN('diabetes', 'tvae'):0.71623472718899
+BasicStatsCalculator('diabetes', 'tvae'):{'mean': 0.01660770976258235, 'median': 0.028217622382740577, 'var': 0.01116557742366149}
+MICalculator('diabetes', 'tvae'):0.7954019782019383
+JSCalculator('diabetes', 'tvae'):0.7617046167393655
+KSCalculator('diabetes', 'tvae'):0.8272172479290084
