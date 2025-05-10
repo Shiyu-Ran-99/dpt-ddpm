@@ -3,7 +3,7 @@
 
 This code is built upon the TabDDPM: the official code is from [tab-ddpm](https://github.com/yandex-research/tab-ddpm), and paper "TabDDPM: Modelling Tabular Data with Diffusion Models" ([paper](https://arxiv.org/abs/2209.15421))
 
-<!-- ## Results
+## Results
 You can check all related experiment results through this link: https://drive.google.com/drive/folders/1GU5JHR6K8tq3lQAX-PlUJqh10rYLTqk0?usp=sharing
 
 ## Setup the environment
