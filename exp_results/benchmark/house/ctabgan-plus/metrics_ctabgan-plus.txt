@@ -1,8 +1,0 @@
-DCRCalculator('house', 'ctabgan-plus'):0.21457679961247006
-NNDRCalculator('house', 'ctabgan-plus'):0.9005953230667496
-AdversarialAccuracyCalculator('house', 'ctabgan-plus'):0.591
-AdversarialAccuracyCalculator_NN('house', 'ctabgan-plus'):0.591
-BasicStatsCalculator('house', 'ctabgan-plus'):{'mean': 0.004775210321042963, 'median': 0.004695980214960487, 'var': 0.003218771003592716}
-MICalculator('house', 'ctabgan-plus'):0.9649600048384369
-JSCalculator('house', 'ctabgan-plus'):0.8573892453819331
-KSCalculator('house', 'ctabgan-plus'):0.910235294117647

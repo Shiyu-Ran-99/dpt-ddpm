@@ -1,8 +1,0 @@
-DCRCalculator('house', 'ddpm_cb_best'):0.17081395106528552
-NNDRCalculator('house', 'ddpm_cb_best'):0.8631848277555659
-AdversarialAccuracyCalculator('house', 'ddpm_cb_best'):0.475
-AdversarialAccuracyCalculator_NN('house', 'ddpm_cb_best'):0.475
-BasicStatsCalculator('house', 'ddpm_cb_best'):{'mean': 0.00595487917111006, 'median': 0.003473622227824913, 'var': 0.0024033456359563964}
-MICalculator('house', 'ddpm_cb_best'):0.9915782968744781
-JSCalculator('house', 'ddpm_cb_best'):0.878918629364416
-KSCalculator('house', 'ddpm_cb_best'):0.9590588235294116

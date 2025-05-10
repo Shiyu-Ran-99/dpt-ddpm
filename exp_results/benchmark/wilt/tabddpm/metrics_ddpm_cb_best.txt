@@ -1,8 +1,0 @@
-DCRCalculator('wilt', 'ddpm_cb_best'):0.03318518604366633
-NNDRCalculator('wilt', 'ddpm_cb_best'):0.6992132752288446
-AdversarialAccuracyCalculator('wilt', 'ddpm_cb_best'):0.4475
-AdversarialAccuracyCalculator_NN('wilt', 'ddpm_cb_best'):0.4475
-BasicStatsCalculator('wilt', 'ddpm_cb_best'):{'mean': 0.0020485188816480164, 'median': 0.003101874434954357, 'var': 0.0009606458144734007}
-MICalculator('wilt', 'ddpm_cb_best'):0.9980132903986421
-JSCalculator('wilt', 'ddpm_cb_best'):0.9101367654560946
-KSCalculator('wilt', 'ddpm_cb_best'):0.9705

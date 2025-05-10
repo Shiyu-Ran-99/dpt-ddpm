@@ -1,8 +1,0 @@
-DCRCalculator('king', 'tvae'):0.368877802477153
-NNDRCalculator('king', 'tvae'):0.8629137515767641
-AdversarialAccuracyCalculator('king', 'tvae'):0.74
-AdversarialAccuracyCalculator_NN('king', 'tvae'):0.74
-BasicStatsCalculator('king', 'tvae'):{'mean': 0.028715721786142227, 'median': 0.03775205495244815, 'var': 0.015246503998011309}
-MICalculator('king', 'tvae'):0.8980082480520842
-JSCalculator('king', 'tvae'):0.874908870592444
-KSCalculator('king', 'tvae'):0.8870000000000001

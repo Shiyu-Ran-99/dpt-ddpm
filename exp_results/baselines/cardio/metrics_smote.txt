@@ -1,8 +1,0 @@
-DCRCalculator('cardio', 'smote'):0.026670312627207288
-NNDRCalculator('cardio', 'smote'):0.6957276088773212
-AdversarialAccuracyCalculator('cardio', 'smote'):0.6994601079784044
-AdversarialAccuracyCalculator_NN('cardio', 'smote'):0.6994601079784044
-BasicStatsCalculator('cardio', 'smote'):{'mean': 0.0741398450730741, 'median': 0.05428681865602086, 'var': 0.04822815921147272}
-MICalculator('cardio', 'smote'):0.9693273873612027
-JSCalculator('cardio', 'smote'):0.8536261892669439
-KSCalculator('cardio', 'smote'):0.8900919816036794

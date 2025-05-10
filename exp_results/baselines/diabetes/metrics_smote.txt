@@ -1,8 +1,0 @@
-DCRCalculator('diabetes', 'smote'):0.2370593706027131
-NNDRCalculator('diabetes', 'smote'):0.7463110214992957
-AdversarialAccuracyCalculator('diabetes', 'smote'):0.4657137145141943
-AdversarialAccuracyCalculator_NN('diabetes', 'smote'):0.4657137145141943
-BasicStatsCalculator('diabetes', 'smote'):{'mean': 0.01696751248634724, 'median': 0.0313841671965427, 'var': 0.012166867896815854}
-MICalculator('diabetes', 'smote'):0.9290371184153883
-JSCalculator('diabetes', 'smote'):0.8640396642003912
-KSCalculator('diabetes', 'smote'):0.904149451330579

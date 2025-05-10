@@ -1,8 +1,0 @@
-DCRCalculator('miniboone', 'tvae'):0.05288912855107123
-NNDRCalculator('miniboone', 'tvae'):0.8845595289687671
-AdversarialAccuracyCalculator('miniboone', 'tvae'):0.55
-AdversarialAccuracyCalculator_NN('miniboone', 'tvae'):0.55
-BasicStatsCalculator('miniboone', 'tvae'):{'mean': 0.0018621874069343711, 'median': 0.0004727013693275894, 'var': 0.0019582352308213703}
-MICalculator('miniboone', 'tvae'):0.9880316140143144
-JSCalculator('miniboone', 'tvae'):0.8525936386068156
-KSCalculator('miniboone', 'tvae'):0.923705882352941

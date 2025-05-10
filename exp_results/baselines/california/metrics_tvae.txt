@@ -1,8 +1,0 @@
-DCRCalculator('california', 'tvae'):0.0512080419381102
-NNDRCalculator('california', 'tvae'):0.8629107874461588
-AdversarialAccuracyCalculator('california', 'tvae'):0.6317930741254423
-AdversarialAccuracyCalculator_NN('california', 'tvae'):0.6317930741254423
-BasicStatsCalculator('california', 'tvae'):{'mean': 0.007851906446810084, 'median': 0.007363231662289009, 'var': 0.001408794241840411}
-MICalculator('california', 'tvae'):0.8628470357507394
-JSCalculator('california', 'tvae'):0.893147444219542
-KSCalculator('california', 'tvae'):0.9523035759151743

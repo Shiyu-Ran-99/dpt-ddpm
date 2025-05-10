@@ -1,8 +1,0 @@
-DCRCalculator('diabetes', 'ddpm_cb_best'):0.7446873607348915
-NNDRCalculator('diabetes', 'ddpm_cb_best'):0.9127147931455749
-AdversarialAccuracyCalculator('diabetes', 'ddpm_cb_best'):0.947265625
-AdversarialAccuracyCalculator_NN('diabetes', 'ddpm_cb_best'):0.947265625
-BasicStatsCalculator('diabetes', 'ddpm_cb_best'):{'mean': 0.1430016130987145, 'median': 0.1540238929755409, 'var': 0.10790315512443882}
-MICalculator('diabetes', 'ddpm_cb_best'):0.9438430411268861
-JSCalculator('diabetes', 'ddpm_cb_best'):0.5888983906465992
-KSCalculator('diabetes', 'ddpm_cb_best'):0.6371527777777777

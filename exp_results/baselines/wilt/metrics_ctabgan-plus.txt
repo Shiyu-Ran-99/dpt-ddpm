@@ -1,8 +1,0 @@
-DCRCalculator('wilt', 'ctabgan-plus'):0.02063365034616378
-NNDRCalculator('wilt', 'ctabgan-plus'):0.8185054766779647
-AdversarialAccuracyCalculator('wilt', 'ctabgan-plus'):0.5616315183623417
-AdversarialAccuracyCalculator_NN('wilt', 'ctabgan-plus'):0.5616315183623417
-BasicStatsCalculator('wilt', 'ctabgan-plus'):{'mean': 0.003457651365142464, 'median': 0.002866381325816307, 'var': 0.002311682410559289}
-MICalculator('wilt', 'ctabgan-plus'):0.9954302391430202
-JSCalculator('wilt', 'ctabgan-plus'):0.9166122446309443
-KSCalculator('wilt', 'ctabgan-plus'):0.9613815051262214

@@ -1,8 +1,0 @@
-DCRCalculator('buddy', 'ctabgan-plus'):0.5898259170945035
-NNDRCalculator('buddy', 'ctabgan-plus'):0.7484538958478438
-AdversarialAccuracyCalculator('buddy', 'ctabgan-plus'):0.52
-AdversarialAccuracyCalculator_NN('buddy', 'ctabgan-plus'):0.52
-BasicStatsCalculator('buddy', 'ctabgan-plus'):{'mean': 0.008134666285453283, 'median': 0.0011119678297191527, 'var': 0.004801363330516005}
-MICalculator('buddy', 'ctabgan-plus'):0.9920344293097069
-JSCalculator('buddy', 'ctabgan-plus'):0.9811169812761616
-KSCalculator('buddy', 'ctabgan-plus'):0.9898309859154928

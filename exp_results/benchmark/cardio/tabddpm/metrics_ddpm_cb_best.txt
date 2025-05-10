@@ -1,8 +1,0 @@
-DCRCalculator('cardio', 'ddpm_cb_best'):0.15504331476588673
-NNDRCalculator('cardio', 'ddpm_cb_best'):0.7338317083662825
-AdversarialAccuracyCalculator('cardio', 'ddpm_cb_best'):0.483
-AdversarialAccuracyCalculator_NN('cardio', 'ddpm_cb_best'):0.483
-BasicStatsCalculator('cardio', 'ddpm_cb_best'):{'mean': 0.012817377316503047, 'median': 0.0005450550167785062, 'var': 0.06523655818334094}
-MICalculator('cardio', 'ddpm_cb_best'):0.9957075065538433
-JSCalculator('cardio', 'ddpm_cb_best'):0.9660870197511212
-KSCalculator('cardio', 'ddpm_cb_best'):0.9831499999999996

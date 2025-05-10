@@ -1,8 +1,0 @@
-DCRCalculator('abalone', 'ctabgan-plus'):0.0998938380138162
-NNDRCalculator('abalone', 'ctabgan-plus'):0.8956594907129612
-AdversarialAccuracyCalculator('abalone', 'ctabgan-plus'):0.634
-AdversarialAccuracyCalculator_NN('abalone', 'ctabgan-plus'):0.634
-BasicStatsCalculator('abalone', 'ctabgan-plus'):{'mean': 0.008290523920255578, 'median': 0.004025939944293092, 'var': 0.0034348833901880773}
-MICalculator('abalone', 'ctabgan-plus'):0.9274224906889794
-JSCalculator('abalone', 'ctabgan-plus'):0.9397855595447667
-KSCalculator('abalone', 'ctabgan-plus'):0.9662727272727274

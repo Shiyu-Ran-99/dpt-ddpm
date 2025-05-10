@@ -1,8 +1,0 @@
-DCRCalculator('abalone', 'tvae'):0.09299147912427498
-NNDRCalculator('abalone', 'tvae'):0.913888417391101
-AdversarialAccuracyCalculator('abalone', 'tvae'):0.8058735733179704
-AdversarialAccuracyCalculator_NN('abalone', 'tvae'):0.8058735733179704
-BasicStatsCalculator('abalone', 'tvae'):{'mean': 0.011204898653303368, 'median': 0.01064628848258691, 'var': 0.0059606820164388626}
-MICalculator('abalone', 'tvae'):0.8993244682204133
-JSCalculator('abalone', 'tvae'):0.8937138296016957
-KSCalculator('abalone', 'tvae'):0.9352133016746259

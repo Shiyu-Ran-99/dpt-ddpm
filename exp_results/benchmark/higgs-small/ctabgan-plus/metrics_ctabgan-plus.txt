@@ -1,8 +1,0 @@
-DCRCalculator('higgs-small', 'ctabgan-plus'):0.8649240669895861
-NNDRCalculator('higgs-small', 'ctabgan-plus'):0.9212303731688932
-AdversarialAccuracyCalculator('higgs-small', 'ctabgan-plus'):0.6965
-AdversarialAccuracyCalculator_NN('higgs-small', 'ctabgan-plus'):0.6965
-BasicStatsCalculator('higgs-small', 'ctabgan-plus'):{'mean': 0.046061684507365724, 'median': 0.06624722780797453, 'var': 0.016570857236194076}
-MICalculator('higgs-small', 'ctabgan-plus'):0.8998663541258899
-JSCalculator('higgs-small', 'ctabgan-plus'):0.8760646659735355
-KSCalculator('higgs-small', 'ctabgan-plus'):0.8664827586206897

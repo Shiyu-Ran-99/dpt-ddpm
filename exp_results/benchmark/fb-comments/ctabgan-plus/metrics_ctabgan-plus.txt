@@ -1,8 +1,0 @@
-DCRCalculator('fb-comments', 'ctabgan-plus'):3.4787280573854114
-NNDRCalculator('fb-comments', 'ctabgan-plus'):0.8998472157032479
-AdversarialAccuracyCalculator('fb-comments', 'ctabgan-plus'):0.7655
-AdversarialAccuracyCalculator_NN('fb-comments', 'ctabgan-plus'):0.7655
-BasicStatsCalculator('fb-comments', 'ctabgan-plus'):{'mean': 0.0663179302015189, 'median': 0.03256402178570928, 'var': 0.24580344855453645}
-MICalculator('fb-comments', 'ctabgan-plus'):0.957470393738537
-JSCalculator('fb-comments', 'ctabgan-plus'):0.8703261077330919
-KSCalculator('fb-comments', 'ctabgan-plus'):0.8556814814814814

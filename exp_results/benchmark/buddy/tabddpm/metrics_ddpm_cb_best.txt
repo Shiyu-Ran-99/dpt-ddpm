@@ -1,8 +1,0 @@
-DCRCalculator('buddy', 'ddpm_cb_best'):0.5098992048389005
-NNDRCalculator('buddy', 'ddpm_cb_best'):0.7375571030101983
-AdversarialAccuracyCalculator('buddy', 'ddpm_cb_best'):0.5065
-AdversarialAccuracyCalculator_NN('buddy', 'ddpm_cb_best'):0.5065
-BasicStatsCalculator('buddy', 'ddpm_cb_best'):{'mean': 0.005805295704699839, 'median': 0.0005208754030174094, 'var': 0.0036434552605234577}
-MICalculator('buddy', 'ddpm_cb_best'):0.9892196908807759
-JSCalculator('buddy', 'ddpm_cb_best'):0.984413549422246
-KSCalculator('buddy', 'ddpm_cb_best'):0.9925211267605635

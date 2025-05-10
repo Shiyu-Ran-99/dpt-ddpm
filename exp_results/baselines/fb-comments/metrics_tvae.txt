@@ -1,8 +1,0 @@
-DCRCalculator('fb-comments', 'tvae'):0.6953810935011453
-NNDRCalculator('fb-comments', 'tvae'):0.8354106614795473
-AdversarialAccuracyCalculator('fb-comments', 'tvae'):0.6359728054389122
-AdversarialAccuracyCalculator_NN('fb-comments', 'tvae'):0.6359728054389122
-BasicStatsCalculator('fb-comments', 'tvae'):{'mean': 0.011009213597275134, 'median': 0.0017956633485872633, 'var': 0.007724597000096698}
-MICalculator('fb-comments', 'tvae'):0.9771643202285146
-JSCalculator('fb-comments', 'tvae'):0.9363743465813157
-KSCalculator('fb-comments', 'tvae'):0.94679245968988

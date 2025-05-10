@@ -1,8 +1,0 @@
-DCRCalculator('insurance', 'tvae'):0.12585865653449269
-NNDRCalculator('insurance', 'tvae'):0.7211597713816869
-AdversarialAccuracyCalculator('insurance', 'tvae'):0.7142254722362694
-AdversarialAccuracyCalculator_NN('insurance', 'tvae'):0.7142254722362694
-BasicStatsCalculator('insurance', 'tvae'):{'mean': 0.022481567327768515, 'median': 0.17250911111245437, 'var': 0.00540182597698171}
-MICalculator('insurance', 'tvae'):0.956849980981382
-JSCalculator('insurance', 'tvae'):0.9329291951273978
-KSCalculator('insurance', 'tvae'):0.9394480688017629

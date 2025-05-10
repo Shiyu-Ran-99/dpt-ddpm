@@ -1,8 +1,0 @@
-DCRCalculator('gesture', 'ctabgan-plus'):0.13300799398360816
-NNDRCalculator('gesture', 'ctabgan-plus'):0.9546351350501521
-AdversarialAccuracyCalculator('gesture', 'ctabgan-plus'):0.8872254654570817
-AdversarialAccuracyCalculator_NN('gesture', 'ctabgan-plus'):0.8872254654570817
-BasicStatsCalculator('gesture', 'ctabgan-plus'):{'mean': 0.005687160916517856, 'median': 0.0034019662449821793, 'var': 0.0009716662970413894}
-MICalculator('gesture', 'ctabgan-plus'):0.9974407219117668
-JSCalculator('gesture', 'ctabgan-plus'):0.7907022276335782
-KSCalculator('gesture', 'ctabgan-plus'):0.8367501971610182

@@ -1,8 +1,0 @@
-DCRCalculator('king', 'ctabgan-plus'):0.6895533517063448
-NNDRCalculator('king', 'ctabgan-plus'):0.9320938788864697
-AdversarialAccuracyCalculator('king', 'ctabgan-plus'):0.8505
-AdversarialAccuracyCalculator_NN('king', 'ctabgan-plus'):0.8505
-BasicStatsCalculator('king', 'ctabgan-plus'):{'mean': 0.014196985968919041, 'median': 0.02039343226920366, 'var': 0.016620817480362014}
-MICalculator('king', 'ctabgan-plus'):0.9514010009599102
-JSCalculator('king', 'ctabgan-plus'):0.8698803015472235
-KSCalculator('king', 'ctabgan-plus'):0.9128000000000001

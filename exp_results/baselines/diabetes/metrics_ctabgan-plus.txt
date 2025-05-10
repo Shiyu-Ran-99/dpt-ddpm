@@ -1,8 +1,0 @@
-DCRCalculator('diabetes', 'ctabgan-plus'):0.1880865967506456
-NNDRCalculator('diabetes', 'ctabgan-plus'):0.8709498667976543
-AdversarialAccuracyCalculator('diabetes', 'ctabgan-plus'):0.5745040569462505
-AdversarialAccuracyCalculator_NN('diabetes', 'ctabgan-plus'):0.5745040569462505
-BasicStatsCalculator('diabetes', 'ctabgan-plus'):{'mean': 0.013236844094816966, 'median': 0.01431275376559373, 'var': 0.0042763949267672925}
-MICalculator('diabetes', 'ctabgan-plus'):0.945802010302335
-JSCalculator('diabetes', 'ctabgan-plus'):0.8928904101472317
-KSCalculator('diabetes', 'ctabgan-plus'):0.9419501487020181

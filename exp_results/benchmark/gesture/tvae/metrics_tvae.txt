@@ -1,8 +1,0 @@
-DCRCalculator('gesture', 'tvae'):0.25713748022948574
-NNDRCalculator('gesture', 'tvae'):0.946066585077714
-AdversarialAccuracyCalculator('gesture', 'tvae'):0.6930000000000001
-AdversarialAccuracyCalculator_NN('gesture', 'tvae'):0.6930000000000001
-BasicStatsCalculator('gesture', 'tvae'):{'mean': 0.005575266824908826, 'median': 0.0054748649418652675, 'var': 0.0010559305307315766}
-MICalculator('gesture', 'tvae'):0.9994970005087866
-JSCalculator('gesture', 'tvae'):0.7517014415365006
-KSCalculator('gesture', 'tvae'):0.8700606060606061

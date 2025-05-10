@@ -1,8 +1,0 @@
-DCRCalculator('insurance', 'ddpm_cb_best'):0.21555593991153163
-NNDRCalculator('insurance', 'ddpm_cb_best'):0.7126524520335336
-AdversarialAccuracyCalculator('insurance', 'ddpm_cb_best'):0.7515000000000001
-AdversarialAccuracyCalculator_NN('insurance', 'ddpm_cb_best'):0.7515000000000001
-BasicStatsCalculator('insurance', 'ddpm_cb_best'):{'mean': 0.1310343701439289, 'median': 0.07833652933850196, 'var': 0.05598006426481941}
-MICalculator('insurance', 'ddpm_cb_best'):0.9694410991845872
-JSCalculator('insurance', 'ddpm_cb_best'):0.7967409795734094
-KSCalculator('insurance', 'ddpm_cb_best'):0.76675

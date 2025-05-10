@@ -1,8 +1,0 @@
-DCRCalculator('churn2', 'smote'):0.27320386294708476
-NNDRCalculator('churn2', 'smote'):0.715302339561277
-AdversarialAccuracyCalculator('churn2', 'smote'):0.521
-AdversarialAccuracyCalculator_NN('churn2', 'smote'):0.521
-BasicStatsCalculator('churn2', 'smote'):{'mean': 0.041424457009825534, 'median': 0.06349056632184358, 'var': 0.017075782189044503}
-MICalculator('churn2', 'smote'):0.980255828564633
-JSCalculator('churn2', 'smote'):0.9315116394954444
-KSCalculator('churn2', 'smote'):0.9404117647058823

@@ -1,8 +1,0 @@
-DCRCalculator('cardio', 'ctabgan-plus'):0.06929007883690605
-NNDRCalculator('cardio', 'ctabgan-plus'):0.7410411371802748
-AdversarialAccuracyCalculator('cardio', 'ctabgan-plus'):0.5186962607478505
-AdversarialAccuracyCalculator_NN('cardio', 'ctabgan-plus'):0.5186962607478505
-BasicStatsCalculator('cardio', 'ctabgan-plus'):{'mean': 0.007087129484505213, 'median': 0.00013545210068871826, 'var': 0.0039482499319587775}
-MICalculator('cardio', 'ctabgan-plus'):0.9893508331033882
-JSCalculator('cardio', 'ctabgan-plus'):0.9339060422951558
-KSCalculator('cardio', 'ctabgan-plus'):0.977744451109778

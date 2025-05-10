@@ -1,8 +1,0 @@
-DCRCalculator('buddy', 'smote'):0.3951564336447017
-NNDRCalculator('buddy', 'smote'):0.7070533352883712
-AdversarialAccuracyCalculator('buddy', 'smote'):0.6915
-AdversarialAccuracyCalculator_NN('buddy', 'smote'):0.6915
-BasicStatsCalculator('buddy', 'smote'):{'mean': 0.03022932877525155, 'median': 0.02181095796166365, 'var': 0.0148940314004512}
-MICalculator('buddy', 'smote'):0.9267234083895757
-JSCalculator('buddy', 'smote'):0.9487960510534182
-KSCalculator('buddy', 'smote'):0.9648450704225353
